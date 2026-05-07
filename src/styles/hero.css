@@ -1,0 +1,57 @@
+/* Letter flip animation - D to T */
+.flip-letter-container {
+  display: inline-block;
+  perspective: 1000px;
+  animation: adjust-spacing 4s ease-in-out infinite;
+}
+
+.flip-letter {
+  display: inline-block;
+  position: relative;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  animation: flip-letter 4s ease-in-out infinite;
+}
+
+.flip-letter-front,
+.flip-letter-back {
+  display: inline-block;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+
+.flip-letter-front {
+  position: relative;
+  z-index: 2;
+  transform: rotateX(0deg);
+}
+
+.flip-letter-back {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  transform: rotateX(180deg);
+  color: #ffffff;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+@keyframes flip-letter {
+  0%, 40% { transform: rotateX(0deg); }
+  50%, 90% { transform: rotateX(180deg); }
+  100% { transform: rotateX(360deg); }
+}
+
+@keyframes adjust-spacing {
+  0%, 40% { margin-right: 0; }
+  50%, 90% { margin-right: -0.15em; }
+  100% { margin-right: 0; }
+}
+
+:root[data-theme='light'] .flip-letter-back {
+  color: #09090b !important;
+  -webkit-text-fill-color: #09090b !important;
+  text-shadow: none;
+}

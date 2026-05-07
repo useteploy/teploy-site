@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://teploy.io/sitemap-index.xml

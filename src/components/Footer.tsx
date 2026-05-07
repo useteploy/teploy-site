@@ -1,0 +1,66 @@
+const footerLinks = {
+  products: [
+    { href: "/deploy", label: "Deploy" },
+    { href: "/observe", label: "Observe" },
+    { href: "/trmnl", label: "Trmnl" },
+  ],
+  resources: [
+    { href: "/docs", label: "Documentation" },
+    { href: "/changelog", label: "Changelog" },
+    { href: "https://github.com/useteploy", label: "GitHub" },
+  ],
+  legal: [
+    { href: "/privacy", label: "Privacy" },
+    { href: "/terms", label: "Terms" },
+    { href: "/security", label: "Security" },
+  ],
+};
+
+function LinkList({ title, links }: { title: string; links: { href: string; label: string }[] }) {
+  return (
+    <div>
+      <h3 class="text-white font-semibold text-[13px] uppercase tracking-wider mb-4">{title}</h3>
+      <ul class="space-y-3">
+        {links.map((link) => (
+          <li>
+            <a href={link.href} class="text-zinc-500 hover:text-white transition-colors text-[14px]">
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default function Footer() {
+  return (
+    <footer class="border-t border-white/[0.06] bg-[#0a0a0c]">
+      <div class="max-w-6xl mx-auto px-6 py-16">
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-8 lg:gap-12">
+          <div class="col-span-2">
+            <a href="/" class="text-[15px] font-semibold text-white hover:text-zinc-300 transition-colors inline-block mb-4">
+              Teploy
+            </a>
+            <p class="text-zinc-500 text-[14px] max-w-xs mb-6 leading-relaxed">
+              Free, open source tools to deploy, monitor, and develop.
+            </p>
+          </div>
+
+          <LinkList title="Products" links={footerLinks.products} />
+          <LinkList title="Resources" links={footerLinks.resources} />
+          <LinkList title="Legal" links={footerLinks.legal} />
+        </div>
+
+        <div class="mt-12 pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p class="text-zinc-600 text-[13px]">
+            &copy; {new Date().getFullYear()} Teploy. All rights reserved.
+          </p>
+          <p class="text-zinc-600 text-[13px]">
+            Built for developers, by developers.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <linearGradient id="mainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#818cf8" /> <!-- Indigo 400 -->
+      <stop offset="100%" stop-color="#c084fc" /> <!-- Purple 400 -->
+    </linearGradient>
+  </defs>
+  
+  <!-- Background Shape (Squircle for modern app feel) -->
+  <rect x="0" y="0" width="512" height="512" rx="128" fill="#18181b" />
+  
+  <!-- Inner Border/Stroke -->
+  <rect x="16" y="16" width="480" height="480" rx="112" stroke="white" stroke-opacity="0.1" stroke-width="8" fill="none" />
+
+  <!-- The T Logo (Centered and Scaled) -->
+  <g transform="translate(56, 56) scale(0.78)">
+     <!-- Horizontal Top Bar -->
+    <rect x="60" y="50" width="392" height="90" rx="24" fill="url(#mainGradient)" />
+    <!-- Vertical Stem -->
+    <rect x="211" y="160" width="90" height="300" rx="24" fill="url(#mainGradient)" />
+  </g>
+</svg>
