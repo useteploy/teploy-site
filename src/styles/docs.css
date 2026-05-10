@@ -414,3 +414,79 @@ a {
     padding: 1.5rem 1rem;
   }
 }
+
+/* /docs landing — listing of sections + their pages */
+.docs-index {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
+}
+.docs-index-header { margin-bottom: 2.5rem; }
+.docs-index-header h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--neutron-fg, #f4f4f5);
+  margin: 0 0 0.5rem;
+}
+.docs-index-header p {
+  color: var(--neutron-fg-muted, #a1a1aa);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin: 0;
+}
+.docs-index-header a {
+  color: var(--neutron-accent, #818cf8);
+  text-decoration: none;
+}
+.docs-index-header a:hover { text-decoration: underline; }
+
+.docs-index-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 1.75rem;
+}
+.docs-index-section {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+}
+.docs-index-section h2 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--neutron-fg-muted, #a1a1aa);
+  margin: 0 0 0.5rem;
+}
+.docs-index-section-desc {
+  font-size: 0.8125rem;
+  color: var(--neutron-fg-muted, #a1a1aa);
+  margin: 0 0 0.875rem;
+  line-height: 1.5;
+}
+.docs-index-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.docs-index-section li { font-size: 0.875rem; line-height: 1.5; }
+.docs-index-section a {
+  color: var(--neutron-fg, #f4f4f5);
+  text-decoration: none;
+  font-weight: 500;
+}
+.docs-index-section a:hover { color: var(--neutron-accent, #818cf8); }
+.docs-index-page-desc {
+  color: var(--neutron-fg-muted, #71717a);
+  font-weight: 400;
+}
+
+[data-theme="light"] .docs-index-section {
+  background: rgba(0, 0, 0, 0.02);
+  border-color: rgba(0, 0, 0, 0.08);
+}
