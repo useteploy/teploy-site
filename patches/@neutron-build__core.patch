@@ -1,0 +1,33 @@
+diff --git a/dist/client/island-runtime.js b/dist/client/island-runtime.js
+index 598a1e4c1733eb9da548ec3b5de4ced3ba83092e..9eab6292dc77c1eb52229106707ffb76293f2d2e 100644
+--- a/dist/client/island-runtime.js
++++ b/dist/client/island-runtime.js	
+@@ -1,6 +1,6 @@
+ // Neutron Island Runtime
+ // Hydrates islands based on client directive
+-import { h, hydrate } from "preact";
++import { h, hydrate, render } from "preact";
+ async function hydrateIsland(island) {
+     if (island.__neutronHydrated)
+         return;
+@@ -16,8 +16,18 @@ async function hydrateIsland(island) {
+     }
+     try {
+         const element = h(Component, props);
+-        island.innerHTML = "";
+-        hydrate(element, island);
++        // Preact's hydrate() walks the existing DOM and attaches event handlers
++        // in place — it crashes with "Cannot read properties of null (reading
++        // 'length')" if you call it against an empty container, because its diff
++        // walker tries to iterate children that don't exist. So:
++        //   - If the island already has SSR-rendered children, hydrate over them.
++        //   - Otherwise (e.g. client="only" with no SSR), render a fresh tree.
++        if (island.firstChild) {
++            hydrate(element, island);
++        }
++        else {
++            render(element, island);
++        }
+         island.__neutronHydrated = true;
+     }
+     catch (error) {

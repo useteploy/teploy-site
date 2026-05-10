@@ -1,0 +1,2 @@
+patchedDependencies:
+  '@neutron-build/core': patches/@neutron-build__core.patch
