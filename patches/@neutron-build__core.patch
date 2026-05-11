@@ -32,7 +32,7 @@ index 598a1e4c1733eb9da548ec3b5de4ced3ba83092e..9eab6292dc77c1eb52229106707ffb76
      }
      catch (error) {
 diff --git a/dist/content/index.js b/dist/content/index.js
-index 3692cd70f3df0c9e6973c41d27f28a351e8db814..46fa3c7af7119beea4907424c2150b55814131fa 100644
+index 3692cd70f3df0c9e6973c41d27f28a351e8db814..28567bbabac2c090231448eec1c4f6ff3ac404a2 100644
 --- a/dist/content/index.js
 +++ b/dist/content/index.js	
 @@ -71,7 +71,11 @@ export async function prepareContentCollections(options = {}) {
@@ -84,15 +84,21 @@ index 3692cd70f3df0c9e6973c41d27f28a351e8db814..46fa3c7af7119beea4907424c2150b55
      }
      const generatedTypes = generateCollectionTypes(config);
      const store = {
-@@ -409,6 +427,21 @@ async function renderMarkup(source, sourceType, filePathForErrors, markdownConfi
-     if (markdownConfig?.syntaxHighlight !== false) {
-         const theme = (markdownConfig?.syntaxHighlight && markdownConfig.syntaxHighlight.theme) || "github-dark";
-         markedInstance.use(markedShikiExtension(theme));
-+        // Shiki's renderer is async; marked silently calls async renderers in
-+        // sync mode and stringifies the returned Promise as "[object Promise]"
-+        // unless we flip global async mode on.
-+        markedInstance.use({ async: true });
-+    }
+@@ -406,9 +424,24 @@ async function renderMarkup(source, sourceType, filePathForErrors, markdownConfi
+         };
+     }
+     const markedInstance = new Marked();
+-    if (markdownConfig?.syntaxHighlight !== false) {
+-        const theme = (markdownConfig?.syntaxHighlight && markdownConfig.syntaxHighlight.theme) || "github-dark";
+-        markedInstance.use(markedShikiExtension(theme));
++    // Note: markedShikiExtension was previously wired here, but Marked v15's
++    // `renderer` override API is sync-only — async renderers (which the Shiki
++    // extension uses) are NOT awaited and get stringified as "[object Promise]"
++    // into the output. Until that's reworked via walkTokens or marked-highlight,
++    // we fall back to Marked's default sync code-block renderer (plain
++    // <pre><code> output, no syntax colors). syntaxHighlight config is
++    // currently a no-op as a result.
++    void markedShikiExtension;
 +    // Apply user-supplied marked extensions (KaTeX, directive, custom tokens).
 +    // Each entry is forwarded directly to Marked.use(). Wired here so plain
 +    // `.md` content gets the same plugin opportunity that MDX has via
