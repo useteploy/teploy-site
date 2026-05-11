@@ -10,169 +10,93 @@ export default function Security() {
       <div class="max-w-3xl mx-auto px-6">
         {/* Header */}
         <div class="mb-16">
-          <p class="text-indigo-400 text-[13px] font-medium uppercase tracking-wider mb-4">Security</p>
+          <p class="text-zinc-500 text-[13px] font-medium uppercase tracking-wider mb-4">Security</p>
           <h1 class="text-4xl sm:text-5xl font-semibold text-white tracking-tight mb-6">
-            Security at Teploy
+            Open source, no phone-home
           </h1>
           <p class="text-zinc-400 text-[16px] leading-relaxed max-w-2xl">
-            Security is foundational to everything we build. Your infrastructure and data deserve enterprise-grade protection without the enterprise complexity.
+            The Teploy tools run on your machines and servers, with code you can audit. There's no Teploy-operated control plane to compromise, no agent reporting back to us, and no credentials being relayed through a third-party service. This page covers how the tools are built and how to report security issues.
           </p>
         </div>
 
-        {/* Security Overview */}
+        {/* Pillars */}
         <div class="grid sm:grid-cols-2 gap-4 mb-16">
           <div class="p-5 rounded-xl border border-white/[0.06] bg-white/[0.02]">
-            <h3 class="text-white font-medium text-[15px] mb-1">SOC 2 Type II</h3>
-            <p class="text-zinc-500 text-[14px]">Compliance certification in progress</p>
+            <h3 class="text-white font-medium text-[15px] mb-1">Source-available</h3>
+            <p class="text-zinc-500 text-[14px]">MIT / AGPL on GitHub — read the code, build it yourself.</p>
           </div>
           <div class="p-5 rounded-xl border border-white/[0.06] bg-white/[0.02]">
-            <h3 class="text-white font-medium text-[15px] mb-1">End-to-End Encryption</h3>
-            <p class="text-zinc-500 text-[14px]">TLS 1.3 in transit, AES-256 at rest</p>
+            <h3 class="text-white font-medium text-[15px] mb-1">No telemetry</h3>
+            <p class="text-zinc-500 text-[14px]">Binaries don't ping a Teploy server. Ever.</p>
           </div>
           <div class="p-5 rounded-xl border border-white/[0.06] bg-white/[0.02]">
-            <h3 class="text-white font-medium text-[15px] mb-1">Zero Trust Architecture</h3>
-            <p class="text-zinc-500 text-[14px]">Every request is authenticated and authorized</p>
+            <h3 class="text-white font-medium text-[15px] mb-1">Local credentials</h3>
+            <p class="text-zinc-500 text-[14px]">SSH keys, registry tokens, env vars — all stay on your machine.</p>
           </div>
           <div class="p-5 rounded-xl border border-white/[0.06] bg-white/[0.02]">
-            <h3 class="text-white font-medium text-[15px] mb-1">Vulnerability Monitoring</h3>
-            <p class="text-zinc-500 text-[14px]">24/7 automated scanning and alerts</p>
+            <h3 class="text-white font-medium text-[15px] mb-1">Reproducible builds</h3>
+            <p class="text-zinc-500 text-[14px]">GitHub Actions builds the releases. SHA256 published with every tag.</p>
           </div>
         </div>
 
         {/* Content */}
         <div class="prose prose-invert prose-zinc max-w-none">
           <div class="space-y-12">
-            {/* Infrastructure Security */}
+
+            {/* How the CLI handles credentials */}
             <section>
-              <h2 class="text-xl font-semibold text-white mb-4">Infrastructure Security</h2>
+              <h2 class="text-xl font-semibold text-white mb-4">How the CLI handles credentials</h2>
+              <ul class="text-zinc-400 text-[15px] leading-relaxed space-y-2 list-disc list-inside">
+                <li><strong class="text-zinc-300">SSH:</strong> the CLI uses your local SSH agent and <span class="font-mono text-zinc-300 text-[13px]">~/.ssh</span> keys. Connections go directly from your machine to your server. Nothing routes through teploy.com.</li>
+                <li><strong class="text-zinc-300">Registry credentials:</strong> Docker registry logins are written to <span class="font-mono text-zinc-300 text-[13px]">~/.teploy/registry.yml</span> on your machine, with file permissions <span class="font-mono text-zinc-300 text-[13px]">0600</span>.</li>
+                <li><strong class="text-zinc-300">Secrets:</strong> encrypted secrets in <span class="font-mono text-zinc-300 text-[13px]">teploy.secrets.yml</span> use age (X25519) with keys you control. The CLI never has plaintext you didn't give it.</li>
+                <li><strong class="text-zinc-300">State files:</strong> deploy state lives at <span class="font-mono text-zinc-300 text-[13px]">/deployments/&lt;app&gt;/</span> on your server. The CLI and Dash both read and write the same files — no separate database, no out-of-band channel.</li>
+              </ul>
+            </section>
+
+            {/* Build supply chain */}
+            <section>
+              <h2 class="text-xl font-semibold text-white mb-4">Build &amp; supply chain</h2>
+              <ul class="text-zinc-400 text-[15px] leading-relaxed space-y-2 list-disc list-inside">
+                <li>Releases are built by GitHub Actions from a tagged commit on the public repo.</li>
+                <li>Every release ships with SHA256 checksums and, where applicable, signed Homebrew formulae.</li>
+                <li>Dependencies are pinned in <span class="font-mono text-zinc-300 text-[13px]">go.mod</span> / <span class="font-mono text-zinc-300 text-[13px]">go.sum</span> and reviewed before bumps.</li>
+                <li>Anyone can rebuild the binary from source and compare digests.</li>
+              </ul>
+            </section>
+
+            {/* Hardening on your end */}
+            <section>
+              <h2 class="text-xl font-semibold text-white mb-4">What's on your end</h2>
               <p class="text-zinc-400 text-[15px] leading-relaxed mb-4">
-                Our control plane runs on hardened infrastructure with multiple layers of protection:
+                Because there's no managed Teploy service, your security posture is largely about how you run the tools and operate your servers. The basics that matter most:
               </p>
               <ul class="text-zinc-400 text-[15px] leading-relaxed space-y-2 list-disc list-inside">
-                <li>Isolated network architecture with private subnets</li>
-                <li>Web Application Firewall (WAF) protection via Cloudflare</li>
-                <li>DDoS mitigation at the edge</li>
-                <li>Regular penetration testing by third-party security firms</li>
-                <li>Automated vulnerability scanning of all dependencies</li>
-                <li>Immutable infrastructure with automated patching</li>
+                <li>Use SSH keys, not passwords. Disable password auth on your servers.</li>
+                <li>Keep your server OS patched. The CLI doesn't install or run an agent that could become an attack surface, but the SSH/Docker/Caddy stack on the server still needs updates.</li>
+                <li>Lock down the Caddy admin API (default: bound to localhost only — leave it that way).</li>
+                <li>Don't expose Dash standalone (<span class="font-mono text-zinc-300 text-[13px]">teploy ui --serve</span>) to the public internet without an auth proxy in front of it.</li>
+                <li>Store age keys for encrypted secrets somewhere you'd store SSH keys — not in the repo.</li>
               </ul>
             </section>
 
-            {/* Data Protection */}
+            {/* Responsible disclosure */}
             <section>
-              <h2 class="text-xl font-semibold text-white mb-4">Data Protection</h2>
-
-              <h3 class="text-[16px] font-medium text-white mt-6 mb-3">Encryption</h3>
-              <ul class="text-zinc-400 text-[15px] leading-relaxed space-y-2 list-disc list-inside">
-                <li><strong class="text-zinc-300">In Transit:</strong> All connections use TLS 1.3 with modern cipher suites</li>
-                <li><strong class="text-zinc-300">At Rest:</strong> AES-256 encryption for all stored data</li>
-                <li><strong class="text-zinc-300">API Credentials:</strong> Envelope encryption with hardware-backed key management</li>
-                <li><strong class="text-zinc-300">Backups:</strong> Encrypted with separate keys from primary data</li>
-              </ul>
-
-              <h3 class="text-[16px] font-medium text-white mt-6 mb-3">Access Controls</h3>
-              <ul class="text-zinc-400 text-[15px] leading-relaxed space-y-2 list-disc list-inside">
-                <li>Role-based access control (RBAC) for team management</li>
-                <li>Two-factor authentication (2FA) support</li>
-                <li>Session management with automatic expiration</li>
-                <li>Audit logs for all sensitive operations</li>
-              </ul>
-            </section>
-
-            {/* Agent Security */}
-            <section>
-              <h2 class="text-xl font-semibold text-white mb-4">Agent Security</h2>
+              <h2 class="text-xl font-semibold text-white mb-4">Reporting a vulnerability</h2>
               <p class="text-zinc-400 text-[15px] leading-relaxed mb-4">
-                The Teploy agent runs on your provisioned servers and communicates securely with our control plane:
+                If you find a security issue in any Teploy binary or in this website, please report it privately first:
               </p>
               <ul class="text-zinc-400 text-[15px] leading-relaxed space-y-2 list-disc list-inside">
-                <li>Agent-initiated WebSocket connections (no inbound ports required)</li>
-                <li>Mutual TLS authentication between agent and control plane</li>
-                <li>Unique cryptographic identity per server</li>
-                <li>Minimal permissions – agent only has access to Docker and deployment directories</li>
-                <li>Automatic updates with signed binaries</li>
+                <li>Email <a href="mailto:contact@teploy.com" class="text-zinc-300 hover:text-white underline underline-offset-2 transition-colors">contact@teploy.com</a> with details and reproduction steps.</li>
+                <li>Don't open a public GitHub issue for security bugs until a fix is shipped.</li>
+                <li>We'll acknowledge within a couple of business days and work with you on a coordinated disclosure timeline.</li>
+                <li>Good-faith research is welcome. We won't pursue legal action for testing against your own infrastructure or for finding bugs in published binaries.</li>
               </ul>
-            </section>
-
-            {/* Network Security */}
-            <section>
-              <h2 class="text-xl font-semibold text-white mb-4">Network Security</h2>
-              <ul class="text-zinc-400 text-[15px] leading-relaxed space-y-2 list-disc list-inside">
-                <li>Cloudflare proxy for all public endpoints (CDN, WAF, DDoS protection)</li>
-                <li>Automatic SSL certificate provisioning and renewal</li>
-                <li>HSTS enforcement with preloading</li>
-                <li>IP allowlisting for sensitive operations</li>
-                <li>Rate limiting to prevent abuse</li>
-              </ul>
-            </section>
-
-            {/* Compliance */}
-            <section>
-              <h2 class="text-xl font-semibold text-white mb-4">Compliance</h2>
-              <p class="text-zinc-400 text-[15px] leading-relaxed mb-4">
-                We're committed to meeting industry standards:
+              <p class="text-zinc-400 text-[15px] leading-relaxed mt-4">
+                There's no bug bounty program right now — this is a small project. We'll credit reporters in release notes where appropriate.
               </p>
-              <ul class="text-zinc-400 text-[15px] leading-relaxed space-y-2 list-disc list-inside">
-                <li><strong class="text-zinc-300">SOC 2 Type II:</strong> Certification in progress</li>
-                <li><strong class="text-zinc-300">GDPR:</strong> Compliant data processing with DPA available</li>
-                <li><strong class="text-zinc-300">CCPA:</strong> California privacy rights supported</li>
-              </ul>
             </section>
 
-            {/* Incident Response */}
-            <section>
-              <h2 class="text-xl font-semibold text-white mb-4">Incident Response</h2>
-              <p class="text-zinc-400 text-[15px] leading-relaxed mb-4">
-                We have a documented incident response process:
-              </p>
-              <ul class="text-zinc-400 text-[15px] leading-relaxed space-y-2 list-disc list-inside">
-                <li>24/7 on-call engineering team</li>
-                <li>Defined escalation procedures</li>
-                <li>Customer notification within 72 hours for data breaches</li>
-                <li>Post-incident reviews and public postmortems for significant events</li>
-              </ul>
-            </section>
-
-            {/* Responsible Disclosure */}
-            <section>
-              <h2 class="text-xl font-semibold text-white mb-4">Responsible Disclosure</h2>
-              <p class="text-zinc-400 text-[15px] leading-relaxed mb-4">
-                We appreciate the security research community's efforts. If you discover a vulnerability:
-              </p>
-              <ul class="text-zinc-400 text-[15px] leading-relaxed space-y-2 list-disc list-inside">
-                <li>Email: <a href="mailto:contact@teploy.com" class="text-indigo-400 hover:text-indigo-300 transition-colors">contact@teploy.com</a></li>
-                <li>PGP key available upon request</li>
-                <li>We aim to respond within 48 hours</li>
-                <li>We will not pursue legal action for good-faith research</li>
-              </ul>
-            </section>
-
-            {/* Your Responsibilities */}
-            <section>
-              <h2 class="text-xl font-semibold text-white mb-4">Your Security Responsibilities</h2>
-              <p class="text-zinc-400 text-[15px] leading-relaxed mb-4">
-                While we secure the platform, you're responsible for:
-              </p>
-              <ul class="text-zinc-400 text-[15px] leading-relaxed space-y-2 list-disc list-inside">
-                <li>Keeping your account credentials secure</li>
-                <li>Enabling two-factor authentication</li>
-                <li>Regularly rotating API keys and tokens</li>
-                <li>Securing your application code</li>
-                <li>Managing access permissions for your team</li>
-                <li>Reviewing audit logs for suspicious activity</li>
-              </ul>
-            </section>
-
-            {/* Contact */}
-            <section>
-              <h2 class="text-xl font-semibold text-white mb-4">Security Contact</h2>
-              <p class="text-zinc-400 text-[15px] leading-relaxed mb-4">
-                For security-related inquiries:
-              </p>
-              <ul class="text-zinc-400 text-[15px] leading-relaxed space-y-2">
-                <li>All inquiries: <a href="mailto:contact@teploy.com" class="text-indigo-400 hover:text-indigo-300 transition-colors">contact@teploy.com</a></li>
-              </ul>
-            </section>
           </div>
         </div>
       </div>

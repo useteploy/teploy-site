@@ -50,7 +50,7 @@ export default function Support() {
       <div class="max-w-3xl mx-auto px-6">
         {/* Header */}
         <div class="text-center mb-16">
-          <p class="text-indigo-400 text-[13px] font-medium uppercase tracking-wider mb-4">Support</p>
+          <p class="text-zinc-500 text-[13px] font-medium uppercase tracking-wider mb-4">Support</p>
           <h1 class="text-4xl sm:text-5xl font-semibold text-white tracking-tight mb-6">
             How Can We Help?
           </h1>

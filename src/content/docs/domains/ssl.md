@@ -48,4 +48,4 @@ If you connect Cloudflare for CDN, you can choose their SSL modes instead:
 | Full | Encrypts to origin (accepts self-signed) |
 | Flexible | Only encrypts to Cloudflare edge |
 
-See [Cloudflare Setup](/domains/cloudflare) for details.
+See [Cloudflare Setup](/docs/domains/cloudflare) for details.

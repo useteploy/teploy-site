@@ -1,12 +1,12 @@
 const footerLinks = {
   products: [
-    { href: "/deploy", label: "Deploy" },
+    { href: "/cli", label: "CLI" },
+    { href: "/dash", label: "Dash" },
     { href: "/observe", label: "Observe" },
-    { href: "/trmnl", label: "Trmnl" },
+    { href: "/trmnl", label: "trmnl" },
   ],
   resources: [
     { href: "/docs", label: "Documentation" },
-    { href: "/changelog", label: "Changelog" },
     { href: "https://github.com/useteploy", label: "GitHub" },
   ],
   legal: [

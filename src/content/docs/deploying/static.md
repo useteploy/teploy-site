@@ -123,4 +123,4 @@ For global edge caching, put Cloudflare in front of your server:
 2. Point to your VPS IP with proxy enabled (orange cloud)
 3. Static assets are cached at 300+ edge locations
 
-See [Cloudflare Setup](/domains/cloudflare) for details.
+See [Cloudflare Setup](/docs/domains/cloudflare) for details.

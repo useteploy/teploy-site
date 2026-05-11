@@ -1,21 +1,17 @@
 ---
 order: 5
 title: Roadmap
-description: Current product status and upcoming features for the Teploy ecosystem.
+description: Current product status and upcoming features for Teploy.
 ---
 
-## Current Status (March 2026)
+## Current Status
 
 | Product | Status |
 |---------|--------|
-| **teploy CLI** | Production-ready. 29k lines Go, 50+ commands, shipping via GitHub releases and Homebrew. |
-| **teploy UI** | Built. Runs embedded (`teploy ui`) for local access or standalone on your server with uptime monitoring, HTTP/TCP checks, and alerting. |
-| **teploy trmnl** | Terminal IDE v0.1.0 shipped. Installable via Homebrew (macOS) and shell script (Linux/WSL). Neovim + Zellij + 50+ tools. |
-| **teploy Observe** | Not yet started. Will provide analytics, APM, and error tracking. |
-| **teploy Router** | Not yet started. Will expose Platform provider integrations as a public REST API. |
-| **Teploy Platform** | Refactored and compiles clean. 28 dashboard pages, 28 tRPC routers, 51 Prisma models, zero type errors. |
-| **Teploy Send** | Built. 12 routers, 10 pages. Email via SES, SMS/voice via Telnyx, templates, delivery analytics. |
-| **MoR Billing** | Built. 10 routers, 5 pages. Stripe Connect sync, jurisdiction tracking, threshold alerts, filing management. |
+| **teploy CLI** | Production-ready. ~29k lines Go, 50+ commands, shipping via GitHub releases and Homebrew. |
+| **teploy Dash** | Embedded mode built (`teploy ui`). Standalone mode with uptime monitoring is in progress. |
+| **teploy Observe** | In progress. Will provide self-hosted analytics, APM, error tracking, and session replay in one binary. |
+| **trmnl** | v0.1.0 shipped. Installable via Homebrew (macOS) and shell script (Linux/WSL). Neovim + Zellij + 50+ tools. |
 
 ## Shipped
 
@@ -35,60 +31,28 @@ description: Current product status and upcoming features for the Teploy ecosyst
 - Maintenance mode and deploy locking
 - Remote exec, logs, status, stats, health checks
 - YAML/TOML config with destination overlays
-- Embedded lightweight web UI
+- Embedded web UI (`teploy ui`)
 - Self-update from GitHub releases
 
-### Teploy Platform
-- Multi-cloud VPS provisioning (Vultr, DigitalOcean, Hetzner, Linode, OVH)
-- Auto-install teploy CLI and UI on provisioned servers
-- CDN management (Cloudflare, Bunny)
-- Domain registration and DNS management (NameSilo, Cloudflare)
-- Object storage (S3, R2, B2, Wasabi, MinIO)
-- SSH key management
-- Multi-tenant organizations with RBAC (Owner/Admin/Member/Viewer)
-- Authentication (email/password, GitHub OAuth, Google OAuth, 2FA)
-- API key management and audit logs
-- Notification channels (Slack, Discord, Telegram, Email, Webhook)
-
-### Teploy Send
-- Email sending via SES with delivery analytics
-- SMS and voice via Telnyx
-- Reusable templates with variable substitution
-- Email domain verification (DKIM, SPF, DMARC)
-- Phone number provisioning
-- Suppression lists (bounce/unsubscribe)
-- Webhook delivery tracking
-
-### MoR Billing
-- Stripe Connect (Standard) integration -- user's own Stripe account
-- Transaction sync and revenue tracking per jurisdiction
-- Threshold alerts at 70/80/90/100% of filing thresholds
-- Filing management (DRAFT to FILED to ACCEPTED)
-- Multi-entity support
-- Compliance dashboard
+### trmnl
+- Neovim with 50+ language servers (Kickstart-based)
+- Zellij multiplexer with custom keybinds
+- Lazygit, Yazi, Starship integrations
+- Modern CLI tools bundled (bat, eza, delta, fzf, ripgrep, fd, zoxide, etc.)
+- Tokyo Night theme across the stack
+- One-command install on macOS, Linux, WSL
 
 ## Near-term
 
-- Wire SES and Telnyx send mutations to dispatch messages end-to-end
-- Runtime test all Platform pages with live database
-- Marketing site and docs rewrite for the new ecosystem
-- Stripe webhook handler for real-time transaction sync
+- **teploy Dash (standalone)** — persistent self-hosted UI with uptime monitoring, status pages, and multi-server fleet overview
+- **teploy Observe** — first cut of the unified analytics + APM + error tracking binary
+- **trmnl v0.2** — teploy CLI integration, additional language profiling tools, `.deb`/`.rpm` packages
 
-## Medium-term
+## Longer-term
 
-- **teploy UI (standalone)** -- self-hosted persistent UI with uptime monitoring, status pages, and multi-server fleet overview
-- **teploy Router** -- public REST API layer over Platform provider integrations
-- **teploy trmnl v0.2** -- teploy CLI integration, additional language profiling tools, .deb/.rpm packages
-- **IDE extensions** -- VS Code and Neovim extensions for deploy, logs, and env vars
-- SSO/SAML integration for enterprise teams
-- AWS and Google Cloud VPS provider support
-
-## Long-term
-
-- **teploy Observe** -- analytics, APM, and error tracking (self-hosted free, managed paid)
-- Database branching for testing
-- SOC 2 Type II certification
-- Data residency options (US, EU, APAC)
+- IDE extensions (VS Code, Neovim) for deploy, logs, and env vars
+- Additional VPS provider integrations referenced from the CLI templates catalog
+- More documentation: deployment recipes, runbooks, troubleshooting playbooks
 
 ## Request a Feature
 

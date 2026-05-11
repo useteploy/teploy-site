@@ -26,7 +26,7 @@ export default function CTA() {
         </div>
 
         <p class="text-zinc-600 text-[13px]">
-          Deploy + Observe + Trmnl. Everything free, forever.
+          CLI + Dash + Observe + trmnl. Everything free, forever.
         </p>
       </div>
     </section>

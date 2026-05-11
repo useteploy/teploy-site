@@ -47,11 +47,12 @@ export default function BlueprintHero() {
           </div>
 
           {/* Product cards */}
-          <div class="max-w-xl mx-auto mb-16 sm:mb-0">
-            <div class="grid grid-cols-3 gap-2">
-              <ProductCard href="/deploy" icon="M5 12h14M12 5l7 7-7 7" color="indigo" label="Deploy" sub="CLI + UI" />
+          <div class="max-w-2xl mx-auto mb-16 sm:mb-0">
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+              <ProductCard href="/cli" icon="M4 17l6-6-6-6M12 19h8" color="indigo" label="CLI" sub="Zero-downtime deploys" />
+              <ProductCard href="/dash" icon="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" color="sky" label="Dash" sub="Web UI + uptime" />
               <ProductCard href="/observe" icon="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" color="violet" label="Observe" sub="Analytics & APM" />
-              <ProductCard href="/trmnl" icon="M4 17l6-6-6-6M12 19h8" color="zinc" label="Trmnl" sub="Terminal IDE" />
+              <ProductCard href="/trmnl" icon="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" color="zinc" label="trmnl" sub="Terminal IDE" />
             </div>
           </div>
         </div>
@@ -81,8 +82,8 @@ function ProductCard({ href, icon, color, label, sub }: {
 }) {
   const colorMap: Record<string, { bg: string; text: string; hover: string }> = {
     indigo: { bg: "bg-indigo-500/10", text: "text-indigo-400", hover: "hover:border-indigo-500/30 hover:bg-indigo-500/[0.04]" },
+    sky:    { bg: "bg-sky-500/10", text: "text-sky-400", hover: "hover:border-sky-500/30 hover:bg-sky-500/[0.04]" },
     violet: { bg: "bg-violet-500/10", text: "text-violet-400", hover: "hover:border-violet-500/30 hover:bg-violet-500/[0.04]" },
-    cyan:   { bg: "bg-cyan-500/10", text: "text-cyan-400", hover: "hover:border-cyan-500/30 hover:bg-cyan-500/[0.04]" },
     zinc:   { bg: "bg-white/[0.06]", text: "text-zinc-400", hover: "hover:border-zinc-500/30 hover:bg-white/[0.03]" },
   };
   const c = colorMap[color] || colorMap.zinc;

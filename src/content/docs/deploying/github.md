@@ -124,8 +124,8 @@ jobs:
 
       - name: Install teploy
         run: |
-          curl -fsSL https://github.com/teploy/teploy/releases/latest/download/teploy-linux-amd64 -o /usr/local/bin/teploy
-          chmod +x /usr/local/bin/teploy
+          curl -fsSL https://github.com/useteploy/teploy/releases/latest/download/teploy_linux_amd64.tar.gz | tar -xz -C /tmp
+          sudo mv /tmp/teploy /usr/local/bin/teploy
 
       - name: Deploy
         run: teploy deploy

@@ -1,10 +1,10 @@
 export const config = { mode: "static" };
 
 export function head() {
-  return { title: "Zero-Downtime Docker Deploys" };
+  return { title: "teploy CLI — Zero-Downtime Docker Deploys" };
 }
 
-export default function Deploy() {
+export default function Cli() {
   return (
     <div class="py-24 sm:py-32">
       <div class="max-w-5xl mx-auto px-6">
@@ -24,9 +24,9 @@ export default function Deploy() {
           </p>
           <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
             <div class="px-6 py-3 bg-zinc-800 border border-zinc-700 rounded-lg font-mono text-[14px] text-zinc-300">
-              brew install teploy
+              brew install useteploy/tap/teploy
             </div>
-            <a href="/getting-started/quick-start" class="text-zinc-400 hover:text-white text-[14px] font-medium transition-colors">
+            <a href="/docs/getting-started/quick-start" class="text-zinc-400 hover:text-white text-[14px] font-medium transition-colors">
               Quick start &rarr;
             </a>
           </div>
@@ -56,53 +56,19 @@ export default function Deploy() {
           </div>
         </div>
 
-        {/* CLI + UI */}
-        <div class="mb-24">
-          <h2 class="text-2xl sm:text-3xl font-semibold text-white text-center mb-4">CLI + UI, one tool</h2>
-          <p class="text-zinc-400 text-center text-[16px] max-w-xl mx-auto mb-12">
-            The CLI is the engine. The UI runs embedded for quick access, or standalone on your server for always-on monitoring.
-          </p>
-
-          <div class="grid md:grid-cols-2 gap-6">
-            {/* CLI */}
-            <div class="p-6 rounded-xl border border-white/[0.06] bg-white/[0.02]">
-              <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center mb-4">
-                <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 17l6-6-6-6M12 19h8" />
-                </svg>
-              </div>
-              <h3 class="text-white font-semibold mb-2">CLI</h3>
-              <p class="text-zinc-400 text-[14px] mb-3">Single Go binary. Deploy, rollback, logs, env vars, accessories, backups, preview environments. Everything from your terminal.</p>
-              <div class="font-mono text-[12px] text-zinc-500 bg-black/20 rounded-md px-3 py-2">
-                teploy deploy<br />
-                teploy rollback<br />
-                teploy logs -f
-              </div>
-            </div>
-
-            {/* UI */}
-            <div class="p-6 rounded-xl border border-indigo-500/20 bg-indigo-500/[0.03]">
-              <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center mb-4">
-                <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-              </div>
-              <h3 class="text-white font-semibold mb-2">UI <span class="text-zinc-500 font-normal text-[13px]">— embedded or standalone</span></h3>
-              <p class="text-zinc-400 text-[14px] mb-3">Run <span class="font-mono text-zinc-300 text-[13px]">teploy ui</span> locally for a quick dashboard, or deploy the UI standalone on your server for 24/7 access with uptime monitoring, HTTP/TCP health checks, and alerting. Uptime Kuma-style, built in.</p>
-              <div class="font-mono text-[12px] text-zinc-500 bg-black/20 rounded-md px-3 py-2">
-                teploy ui <span class="text-zinc-600"># embedded</span><br />
-                teploy ui --serve <span class="text-zinc-600"># standalone</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* No desync callout */}
+        {/* Pairs with Dash */}
         <div class="mb-24 rounded-xl border border-white/[0.06] bg-white/[0.02] p-8">
-          <h3 class="text-lg font-semibold text-white mb-3">No desync. Ever.</h3>
-          <p class="text-zinc-400 text-[14px] leading-relaxed max-w-2xl">
-            Tools like Dokploy and Coolify maintain their own database of what's deployed. When you change something via SSH, the UI is stale. Teploy works differently: the CLI writes state to files on the server. The UI reads those same files. Whether you deploy from the CLI, the UI, or a webhook — the state files are always current. One source of truth. No divergence.
-          </p>
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div>
+              <h3 class="text-lg font-semibold text-white mb-2">Want a web UI?</h3>
+              <p class="text-zinc-400 text-[14px] leading-relaxed max-w-xl">
+                Run <span class="font-mono text-zinc-300 text-[13px]">teploy ui</span> for a local dashboard, or deploy <a href="/dash" class="text-sky-400 hover:text-sky-300 underline underline-offset-2">teploy Dash</a> standalone for 24/7 monitoring with HTTP/TCP health checks. Same binary, same state files — no desync.
+              </p>
+            </div>
+            <a href="/dash" class="shrink-0 px-4 py-2 bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.06] hover:border-white/[0.12] text-white text-[14px] font-medium rounded-lg transition-colors">
+              Dash &rarr;
+            </a>
+          </div>
         </div>
 
         {/* Features Grid */}

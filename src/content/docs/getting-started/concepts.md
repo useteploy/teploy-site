@@ -1,16 +1,19 @@
 ---
 order: 3
 title: Core Concepts
-description: Understand the key concepts behind Teploy -- CLI vs Platform, state files, zero-downtime deploys, and how the ecosystem fits together.
+description: Understand the key concepts behind Teploy — state files, zero-downtime deploys, accessories, and how the tools fit together.
 ---
 
-## CLI vs Platform
+## The tools
 
-The **teploy CLI** is the core deployment tool. It is free, open source, and runs on your machine. It connects to servers via SSH and deploys Docker containers directly. No management server, no agent, no hosted service required.
+Teploy is a small set of self-hosted tools that share a state-file convention:
 
-The **Teploy Platform** is an optional paid service for teams that need managed infrastructure: VPS provisioning, CDN, domains, object storage, email/SMS, and tax compliance. The Platform provisions servers with the CLI pre-installed.
+- **teploy CLI** — the deployment engine. SSH into servers and run zero-downtime Docker deploys.
+- **teploy Dash** — a web UI that reads the CLI's state files. Runs embedded (`teploy ui`) or standalone on your server.
+- **teploy Observe** — self-hosted analytics, APM, and error tracking. One binary, your data.
+- **trmnl** — a curated terminal IDE config bundle.
 
-You can use the CLI without the Platform. You can use the Platform without the CLI (managing infrastructure through the dashboard). They work best together.
+You can use any of these on their own. They're designed to compose, not lock you in.
 
 ## Architecture
 
@@ -19,11 +22,11 @@ Your machine                         Your server(s)
   teploy CLI  ──── SSH ────────────►  Docker containers
                                       Caddy (reverse proxy + HTTPS)
                                       State files (/deployments/)
-
-Optional:
-  Teploy Platform  ──── APIs ──────►  VPS providers (Vultr, DO, Hetzner...)
-                                      Cloudflare, NameSilo, SES, Telnyx
+                                      teploy Dash (optional, --serve)
+                                      teploy Observe (optional)
 ```
+
+No management server, no agent, no hosted service. The CLI and Dash both read and write the same state files on the server.
 
 ## Config files
 
@@ -200,6 +203,6 @@ Templates generate a pre-configured `teploy.yml` with accessories and environmen
 
 ## Next steps
 
-- [Deploy from Docker](/deploying/docker) -- Dockerfile and image-based deploys
-- [Deploy from GitHub](/deploying/github) -- Webhook-triggered auto-deploys
-- [CLI Reference](/reference/cli) -- All 50+ commands
+- [Deploy from Docker](/docs/deploying/docker) — Dockerfile and image-based deploys
+- [Deploy from GitHub](/docs/deploying/github) — Webhook-triggered auto-deploys
+- [CLI Reference](/docs/reference/cli) — All 50+ commands

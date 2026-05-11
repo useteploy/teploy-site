@@ -49,7 +49,7 @@ export default function Status() {
       <div class="max-w-3xl mx-auto px-6">
         {/* Header */}
         <div class="mb-12">
-          <p class="text-indigo-400 text-[13px] font-medium uppercase tracking-wider mb-4">System Status</p>
+          <p class="text-zinc-500 text-[13px] font-medium uppercase tracking-wider mb-4">System Status</p>
           <h1 class="text-4xl sm:text-5xl font-semibold text-white tracking-tight mb-6">
             All Systems Operational
           </h1>

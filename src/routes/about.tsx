@@ -29,12 +29,12 @@ export default function About() {
       <div class="max-w-3xl mx-auto px-6">
         {/* Header */}
         <div class="mb-16">
-          <p class="text-indigo-400 text-[13px] font-medium uppercase tracking-wider mb-4">About</p>
+          <p class="text-zinc-500 text-[13px] font-medium uppercase tracking-wider mb-4">About</p>
           <h1 class="text-4xl sm:text-5xl font-semibold text-white tracking-tight mb-6">
-            Deployment should be simple
+            Tools you own, not subscriptions you rent
           </h1>
           <p class="text-zinc-400 text-[16px] leading-relaxed">
-            We're building the deployment platform we always wanted—combining Vercel's simplicity with the raw power and unmatched economics of your own servers.
+            Teploy is a small set of free, open source tools for deploying, monitoring, and operating self-hosted apps. No accounts. No managed dependencies. The kind of tools that disappear into your workflow.
           </p>
         </div>
 
@@ -42,13 +42,13 @@ export default function About() {
         <div class="prose prose-invert prose-zinc max-w-none mb-20">
           <div class="space-y-6">
             <p class="text-zinc-400 text-[15px] leading-relaxed">
-              Teploy was born from a simple frustration: deployment shouldn't be a choice between exorbitant managed fees or weeks to months of server wrangling.
+              The deployment landscape has split into two extremes: hosted platforms that charge for every commit, and DIY setups that take weeks to wire together. There isn't much room in the middle for people who just want to ship.
             </p>
             <p class="text-zinc-400 text-[15px] leading-relaxed">
-              We forged a middle ground. A platform that delivers one-click simplicity on affordable VPS instances you control. Connect your provider, push your code, and go live in minutes.
+              Teploy is built for that middle. A single Go binary deploys your app to any server you can SSH into. A web dashboard reads the same state files the CLI writes — no desync. Observability is one self-hosted binary with the same data model. A terminal IDE bundle gets you productive on a fresh machine in one install.
             </p>
             <p class="text-zinc-400 text-[15px] leading-relaxed">
-              That's Teploy. We abstract away the chaos of provisioning, pipelines, SSL, and CDNs so you can just ship. Plus, we give you the keys to self-host your entire business stack—automating your operations for free.
+              Everything is MIT or AGPL on GitHub. Nothing phones home. If a managed offering ever ships, it'll be a separate, optional add-on — never a gate around what's free today.
             </p>
           </div>
         </div>
@@ -74,7 +74,7 @@ export default function About() {
             <a href="/contact" class="px-6 py-2.5 bg-white text-zinc-900 text-[14px] font-medium rounded-lg hover:bg-zinc-100 transition-colors">
               Get in Touch
             </a>
-            <a href="/getting-started/introduction" class="px-6 py-2.5 text-zinc-400 hover:text-white text-[14px] font-medium transition-colors">
+            <a href="/docs/getting-started/introduction" class="px-6 py-2.5 text-zinc-400 hover:text-white text-[14px] font-medium transition-colors">
               Read the Docs
             </a>
           </div>

@@ -28,11 +28,11 @@ export default function HowItWorks() {
 
         <div class="mt-12 pt-8 border-t border-white/[0.04] animate-fade-in animate-delay-200">
           <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[11px] text-zinc-600">
-            <span>Automatic SSL</span>
+            <span>Automatic HTTPS</span>
             <span class="hidden sm:inline">&#183;</span>
-            <span>Docker & Nixpacks</span>
+            <span>Self-hosted observability</span>
             <span class="hidden sm:inline">&#183;</span>
-            <span>Any VPS provider</span>
+            <span>No vendor lock-in</span>
           </div>
         </div>
       </div>

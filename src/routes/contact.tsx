@@ -10,7 +10,7 @@ export default function Contact() {
       <div class="max-w-3xl mx-auto px-6">
         {/* Header */}
         <div class="text-center mb-16">
-          <p class="text-indigo-400 text-[13px] font-medium uppercase tracking-wider mb-4">Contact</p>
+          <p class="text-zinc-500 text-[13px] font-medium uppercase tracking-wider mb-4">Contact</p>
           <h1 class="text-4xl sm:text-5xl font-semibold text-white tracking-tight mb-6">
             Get in Touch
           </h1>
@@ -25,7 +25,7 @@ export default function Contact() {
             href="mailto:contact@teploy.com"
             class="inline-flex items-center gap-3 px-8 py-4 rounded-xl border border-white/[0.06] bg-white/[0.02] hover:border-white/[0.1] hover:bg-white/[0.03] transition-all"
           >
-            <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-5 h-5 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
             <span class="text-white font-medium text-[15px]">contact@teploy.com</span>

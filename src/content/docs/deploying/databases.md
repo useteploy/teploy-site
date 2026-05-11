@@ -150,7 +150,7 @@ Use any S3-compatible storage:
 | Wasabi | Custom | $0.007/GB, no egress fees |
 | MinIO | Self-hosted | Free |
 
-See [Recommended Services](/reference/recommendations#object-storage) for setup details.
+See [Recommended Services](/docs/reference/recommendations#object-storage) for setup details.
 
 ## Connection strings
 

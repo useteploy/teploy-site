@@ -1,4 +1,5 @@
 import "../styles/global.css";
+import "../styles/marketing.css";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 

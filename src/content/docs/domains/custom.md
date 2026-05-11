@@ -66,4 +66,4 @@ If you want CDN and DDoS protection, you can route traffic through Cloudflare:
 2. Point Cloudflare to your VPS IP
 3. Enable proxy (orange cloud)
 
-See [Cloudflare Setup](/domains/cloudflare) for details.
+See [Cloudflare Setup](/docs/domains/cloudflare) for details.

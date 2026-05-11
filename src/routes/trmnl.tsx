@@ -1,7 +1,7 @@
 export const config = { mode: "static" };
 
 export function head() {
-  return { title: "trmnl -- Terminal IDE" };
+  return { title: "trmnl — Terminal IDE" };
 }
 
 const features = [
@@ -21,9 +21,9 @@ const features = [
     icon: 'M12 14l9-5-9-5-9 5 9 5zm0 7l9-5-9-5-9 5 9 5z',
   },
   {
-    title: 'AI Assistance',
-    description: 'CodeCompanion with Claude API built in. Inline suggestions, chat, and code actions from your editor.',
-    icon: 'M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714a2.25 2.25 0 00.659 1.591L19 14.5',
+    title: 'Yazi file manager',
+    description: 'Blazing-fast terminal file manager with image previews, batch operations, and Neovim integration.',
+    icon: 'M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z',
   },
   {
     title: 'Modern CLI',
@@ -44,7 +44,6 @@ const stack = [
   { name: 'Lazygit', role: 'Git UI', url: 'https://github.com/jesseduffield/lazygit' },
   { name: 'Ghostty', role: 'Terminal (rec.)', url: 'https://ghostty.org' },
   { name: 'Starship', role: 'Prompt', url: 'https://starship.rs' },
-  { name: 'CodeCompanion', role: 'AI', url: 'https://github.com/olimorris/codecompanion.nvim' },
   { name: 'Kickstart.nvim', role: 'Config Base', url: 'https://github.com/nvim-lua/kickstart.nvim' },
 ];
 
@@ -85,7 +84,7 @@ export default function Trmnl() {
             </div>
             <span class="text-zinc-600 text-[13px]">or</span>
             <div class="px-6 py-3 bg-zinc-800 border border-zinc-700 rounded-lg font-mono text-[14px] text-zinc-300">
-              curl -fsSL trmnl.dev/install.sh | bash
+              curl -fsSL https://raw.githubusercontent.com/useteploy/trmnl/main/install.sh | bash
             </div>
           </div>
           <p class="text-zinc-600 text-[12px] mt-3">macOS, Linux, WSL</p>
@@ -174,17 +173,6 @@ export default function Trmnl() {
               </a>
             ))}
           </div>
-        </div>
-
-        {/* AI coding callout */}
-        <div class="mb-24 rounded-xl border border-cyan-500/20 bg-cyan-500/5 p-6 text-center">
-          <p class="text-zinc-400 text-[14px] mb-2">Looking for AI coding?</p>
-          <p class="text-white font-medium mb-4">
-            AI-powered coding is a separate tool: <a href="/code" class="text-cyan-400 hover:text-cyan-300 underline">teploy code</a>
-          </p>
-          <p class="text-zinc-500 text-[13px]">
-            trmnl is the terminal config bundle. teploy code is the AI coding assistant. They work together.
-          </p>
         </div>
 
         {/* CTA */}

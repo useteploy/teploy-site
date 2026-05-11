@@ -9,7 +9,7 @@ Teploy handles your infrastructure, but you'll likely need additional services f
 ## CDN & Edge
 
 ### Cloudflare (Optional Integration)
-Connect your Cloudflare account for CDN, DDoS protection, and WAF. See [Cloudflare Setup](/domains/cloudflare) for setup instructions.
+Connect your Cloudflare account for CDN, DDoS protection, and WAF. See [Cloudflare Setup](/docs/domains/cloudflare) for setup instructions.
 
 **Note:** SSL is provided automatically via Let's Encrypt. Cloudflare is optional and adds CDN/security features.
 

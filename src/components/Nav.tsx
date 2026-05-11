@@ -2,9 +2,10 @@ import { Island } from "@neutron-build/core/client";
 import { ThemeToggle } from "./ThemeToggle";
 
 const navLinks = [
-  { href: "/deploy", label: "Deploy" },
+  { href: "/cli", label: "CLI" },
+  { href: "/dash", label: "Dash" },
   { href: "/observe", label: "Observe" },
-  { href: "/trmnl", label: "Trmnl" },
+  { href: "/trmnl", label: "trmnl" },
   { href: "/docs", label: "Docs" },
 ];
 
@@ -56,19 +57,23 @@ export default function Nav() {
       <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 bg-[#09090b] border-b border-white/[0.06]">
         <div class="max-w-6xl mx-auto px-6 py-4 space-y-4">
           <div class="grid grid-cols-2 gap-2">
-            <a href="/deploy" class="p-3 rounded-lg bg-indigo-500/10 border border-indigo-500/20">
-              <div class="text-[13px] text-white font-semibold">Deploy</div>
-              <div class="text-[10px] text-zinc-400">CLI + UI</div>
+            <a href="/cli" class="p-3 rounded-lg bg-indigo-500/10 border border-indigo-500/20">
+              <div class="text-[13px] text-white font-semibold">CLI</div>
+              <div class="text-[10px] text-zinc-400">Zero-downtime deploys</div>
+            </a>
+            <a href="/dash" class="p-3 rounded-lg bg-sky-500/10 border border-sky-500/20">
+              <div class="text-[13px] text-white font-semibold">Dash</div>
+              <div class="text-[10px] text-zinc-400">Web UI + uptime</div>
             </a>
             <a href="/observe" class="p-3 rounded-lg bg-violet-500/10 border border-violet-500/20">
               <div class="text-[13px] text-white font-semibold">Observe</div>
               <div class="text-[10px] text-zinc-400">Analytics & APM</div>
             </a>
             <a href="/trmnl" class="p-3 rounded-lg bg-white/[0.04] border border-white/[0.08]">
-              <div class="text-[13px] text-white font-semibold">Trmnl</div>
+              <div class="text-[13px] text-white font-semibold">trmnl</div>
               <div class="text-[10px] text-zinc-400">Terminal IDE</div>
             </a>
-            <a href="/docs" class="p-3 rounded-lg bg-white/[0.04] border border-white/[0.08]">
+            <a href="/docs" class="p-3 rounded-lg bg-white/[0.04] border border-white/[0.08] col-span-2">
               <div class="text-[13px] text-white font-semibold">Docs</div>
               <div class="text-[10px] text-zinc-400">Guides & reference</div>
             </a>

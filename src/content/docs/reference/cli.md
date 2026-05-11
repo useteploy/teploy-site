@@ -4,7 +4,7 @@ title: CLI Reference
 description: Complete reference for all teploy CLI commands.
 ---
 
-The teploy CLI is a single Go binary that deploys Docker containers to any server via SSH. Install with `brew install teploy`.
+The teploy CLI is a single Go binary that deploys Docker containers to any server via SSH. Install with `brew install useteploy/tap/teploy`.
 
 ## Global flags
 

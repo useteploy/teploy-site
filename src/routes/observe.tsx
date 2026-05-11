@@ -1,7 +1,7 @@
 export const config = { mode: "static" };
 
 export function head() {
-  return { title: "Observe -- Analytics, APM & Error Tracking in One" };
+  return { title: "teploy Observe — Analytics, APM & Error Tracking in One" };
 }
 
 export default function Observe() {
@@ -10,10 +10,10 @@ export default function Observe() {
       <div class="max-w-5xl mx-auto px-6">
 
         {/* Hero */}
-        <div class="text-center mb-24">
+        <div class="text-center mb-20">
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-400 text-[12px] font-medium mb-6">
             <span class="w-1.5 h-1.5 rounded-full bg-violet-400"></span>
-            Free, self-hosted
+            Free, open source
           </div>
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white tracking-tight mb-6">
             Four tools.<br class="hidden sm:block" />
@@ -25,16 +25,16 @@ export default function Observe() {
           </p>
           <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
             <div class="px-6 py-3 bg-zinc-800 border border-zinc-700 rounded-lg font-mono text-[14px] text-zinc-300">
-              curl -fsSL get.teploy.io/observe | sh
+              brew install useteploy/tap/observe
             </div>
-            <a href="/getting-started/introduction" class="text-zinc-400 hover:text-white text-[14px] font-medium transition-colors">
+            <a href="/docs/getting-started/introduction" class="text-zinc-400 hover:text-white text-[14px] font-medium transition-colors">
               Read the docs &rarr;
             </a>
           </div>
         </div>
 
         {/* The Stack Collapse */}
-        <div class="mb-32">
+        <div class="mb-24">
           {/* Tier toggle */}
           <div class="flex justify-center mb-8">
             <div class="inline-flex items-center bg-zinc-900 border border-white/[0.06] rounded-lg p-1" id="tier-toggle">
@@ -176,7 +176,7 @@ export default function Observe() {
         </div>
 
         {/* What's Inside */}
-        <div class="mb-32">
+        <div class="mb-24">
           <div class="text-center mb-16">
             <h2 class="text-3xl sm:text-4xl font-semibold text-white tracking-tight mb-4">
               Everything observability, nothing else
@@ -205,7 +205,7 @@ export default function Observe() {
 
             {/* APM */}
             <div class="observe-vertical">
-              <div class="vertical-badge apm">Replaces Datadog + SignOz</div>
+              <div class="vertical-badge apm">Replaces Datadog + SigNoz</div>
               <h3 class="text-lg font-semibold text-white mb-2">APM & Tracing</h3>
               <p class="text-zinc-400 text-[14px] mb-4">OpenTelemetry-native distributed tracing with automatic service maps.</p>
               <ul class="vertical-list">
@@ -254,7 +254,7 @@ export default function Observe() {
         </div>
 
         {/* How it works */}
-        <div class="mb-32">
+        <div class="mb-24">
           <div class="text-center mb-12">
             <h2 class="text-2xl font-semibold text-white mb-4">One binary. Seriously.</h2>
             <p class="text-zinc-400 text-[14px] max-w-lg mx-auto">
@@ -267,7 +267,7 @@ export default function Observe() {
             <div class="step-card">
               <div class="step-num">1</div>
               <h4 class="text-white font-medium mb-2">Install</h4>
-              <div class="step-code">curl -fsSL get.teploy.io/observe | sh</div>
+              <div class="step-code">curl -sL https://raw.githubusercontent.com/useteploy/teploy-observe/main/scripts/install.sh | sh</div>
               <p class="text-zinc-500 text-[13px] mt-2">Single binary. No Docker, no Kubernetes, no config files.</p>
             </div>
             <div class="step-card">
@@ -286,7 +286,7 @@ export default function Observe() {
         </div>
 
         {/* Comparison */}
-        <div class="mb-32">
+        <div class="mb-24">
           <div class="text-center mb-12">
             <h2 class="text-2xl font-semibold text-white mb-4">How Observe compares</h2>
           </div>
@@ -319,16 +319,16 @@ export default function Observe() {
           </div>
         </div>
 
-        {/* Managed option */}
-        <div class="mb-16">
-          <div class="observe-managed">
-            <h3 class="text-xl font-semibold text-white mb-2">Don't want to self-host?</h3>
-            <p class="text-zinc-400 text-[14px] mb-4">
-              Start self-hosted. When your data grows and you'd rather not manage the infrastructure,
-              migrate to managed Observe through the Teploy Platform with one click. Same dashboard, we handle the scaling.
-            </p>
-            <a href="/pricing" class="text-violet-400 hover:text-violet-300 text-[14px] font-medium">
-              See Platform pricing &rarr;
+        {/* CTA */}
+        <div class="text-center mb-16">
+          <h2 class="text-2xl font-semibold text-white mb-4">Run it yourself</h2>
+          <p class="text-zinc-400 text-[15px] mb-6 max-w-lg mx-auto">One binary. Your server. No accounts, no event caps, no per-seat pricing.</p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="https://github.com/useteploy/observe" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-white text-zinc-900 font-medium text-[14px] rounded-lg hover:bg-zinc-200 transition-colors">
+              View on GitHub
+            </a>
+            <a href="/docs/getting-started/introduction" class="text-zinc-400 hover:text-white text-[14px] font-medium transition-colors">
+              Read the docs &rarr;
             </a>
           </div>
         </div>

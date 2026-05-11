@@ -14,10 +14,10 @@ Get your first app deployed in under 5 minutes using the teploy CLI.
 ## 1. Install the CLI
 
 ```bash
-brew install teploy
+brew install useteploy/tap/teploy
 ```
 
-Or download the binary directly from [GitHub releases](https://github.com/teploy/teploy/releases).
+Or download the binary directly from [GitHub releases](https://github.com/useteploy/teploy/releases).
 
 ## 2. Prepare your server
 
@@ -98,14 +98,10 @@ teploy autodeploy setup --branch main
 
 This installs a webhook listener on your server. Add the webhook URL to your GitHub repo settings, and every push to `main` triggers a deploy.
 
-## Optional: Sign up for Teploy Platform
-
-If you want managed VPS provisioning, CDN, domain registration, email/SMS, or tax compliance tooling, sign up at [app.teploy.io](https://app.teploy.io). The Platform provisions servers with the CLI pre-installed.
-
 ## Next steps
 
-- [Core Concepts](/getting-started/concepts) -- CLI vs Platform, state files, how it all works
-- [Docker deploys](/deploying/docker) -- Dockerfile, local vs server builds
-- [Databases](/deploying/databases) -- PostgreSQL, MySQL, Redis as accessories
-- [Environment variables](/reference/env-vars) -- Managing config per app
-- [Custom domains](/domains/custom) -- Point your domain to your app
+- [Core Concepts](/docs/getting-started/concepts) — state files, accessories, and how it all works
+- [Docker deploys](/docs/deploying/docker) — Dockerfile, local vs server builds
+- [Databases](/docs/deploying/databases) — PostgreSQL, MySQL, Redis as accessories
+- [Environment variables](/docs/reference/env-vars) — Managing config per app
+- [Custom domains](/docs/domains/custom) — Point your domain to your app
