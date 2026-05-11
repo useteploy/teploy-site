@@ -12,7 +12,7 @@ export function head() {
     htmlAttrs: { lang: "en", "data-theme": "dark" },
     headScripts: [
       {
-        content: `(function(){var s=localStorage.getItem("theme");if(s){document.documentElement.setAttribute("data-theme",s)}else if(window.matchMedia("(prefers-color-scheme:light)").matches){document.documentElement.setAttribute("data-theme","light")}})();`,
+        content: `(function(){var s=localStorage.getItem("theme");var t=s||(window.matchMedia&&window.matchMedia("(prefers-color-scheme:light)").matches?"light":"dark");document.documentElement.setAttribute("data-theme",t);})();`,
         id: "theme-init",
       },
       {
