@@ -50,11 +50,11 @@ export default function Support() {
       <div class="max-w-3xl mx-auto px-6">
         {/* Header */}
         <div class="text-center mb-16">
-          <p class="text-zinc-500 text-[13px] font-medium uppercase tracking-wider mb-4">Support</p>
+          <p class="text-zinc-600 dark:text-zinc-500 text-[13px] font-medium uppercase tracking-wider mb-4">Support</p>
           <h1 class="text-4xl sm:text-5xl font-semibold text-zinc-900 dark:text-white tracking-tight mb-6">
             How Can We Help?
           </h1>
-          <p class="text-zinc-600 dark:text-zinc-400 text-[16px] leading-relaxed max-w-lg mx-auto">
+          <p class="text-zinc-700 dark:text-zinc-400 text-[16px] leading-relaxed max-w-lg mx-auto">
             Find answers in our docs, join the community, or reach out to our support team.
           </p>
         </div>
@@ -69,7 +69,7 @@ export default function Support() {
               <h3 class="text-zinc-900 dark:text-white font-medium text-[15px] mb-1 flex items-center gap-2">
                 {resource.title}
               </h3>
-              <p class="text-zinc-500 text-[14px] leading-relaxed">{resource.description}</p>
+              <p class="text-zinc-600 dark:text-zinc-500 text-[14px] leading-relaxed">{resource.description}</p>
             </a>
           ))}
         </div>
@@ -82,12 +82,12 @@ export default function Support() {
               <details class="group border border-zinc-200/70 dark:border-white/[0.06] rounded-lg bg-zinc-100/60 dark:bg-white/[0.02]">
                 <summary class="flex items-center justify-between p-5 cursor-pointer list-none">
                   <span class="text-zinc-900 dark:text-white font-medium text-[15px] pr-4">{faq.question}</span>
-                  <svg class="w-5 h-5 text-zinc-500 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-5 h-5 text-zinc-600 dark:text-zinc-500 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                   </svg>
                 </summary>
                 <div class="px-5 pb-5 pt-0">
-                  <p class="text-zinc-500 text-[14px] leading-relaxed">{faq.answer}</p>
+                  <p class="text-zinc-600 dark:text-zinc-500 text-[14px] leading-relaxed">{faq.answer}</p>
                 </div>
               </details>
             ))}
@@ -99,7 +99,7 @@ export default function Support() {
           <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
             <div>
               <h2 class="text-xl font-semibold text-zinc-900 dark:text-white mb-2">Still Need Help?</h2>
-              <p class="text-zinc-500 text-[14px]">
+              <p class="text-zinc-600 dark:text-zinc-500 text-[14px]">
                 Our support team is available Monday–Friday, 9am–6pm EST.
               </p>
             </div>

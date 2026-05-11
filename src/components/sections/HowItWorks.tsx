@@ -10,7 +10,7 @@ export default function HowItWorks() {
     <section id="how" class="py-20 relative">
       <div class="max-w-2xl mx-auto px-6">
         <div class="text-center mb-12 animate-fade-in-up">
-          <p class="text-[11px] text-zinc-500 uppercase tracking-widest mb-3">How it works</p>
+          <p class="text-[11px] text-zinc-600 dark:text-zinc-500 uppercase tracking-widest mb-3">How it works</p>
           <h2 class="text-2xl font-semibold text-zinc-900 dark:text-white tracking-tight">
             Four steps to production
           </h2>
@@ -21,13 +21,13 @@ export default function HowItWorks() {
             <div class="text-center">
               <div class="text-[32px] font-light text-zinc-700 mb-2">{step.number}</div>
               <h3 class="text-[13px] font-medium text-zinc-900 dark:text-white mb-1">{step.title}</h3>
-              <p class="text-[11px] text-zinc-500 leading-relaxed">{step.description}</p>
+              <p class="text-[11px] text-zinc-600 dark:text-zinc-500 leading-relaxed">{step.description}</p>
             </div>
           ))}
         </div>
 
         <div class="mt-12 pt-8 border-t border-white/[0.04] animate-fade-in animate-delay-200">
-          <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[11px] text-zinc-600">
+          <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[11px] text-zinc-700 dark:text-zinc-600">
             <span>Automatic HTTPS</span>
             <span class="hidden sm:inline">&#183;</span>
             <span>Self-hosted observability</span>

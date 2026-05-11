@@ -53,12 +53,12 @@ export default function BlogPost({ data }: { data: any }) {
         <div class="mb-12">
           <div class="flex items-center gap-3 mb-6">
             <span class="category-badge">{data.category}</span>
-            <span class="text-zinc-600 text-[13px]">&#183;</span>
-            <time class="text-zinc-500 text-[13px]">{formattedDate}</time>
+            <span class="text-zinc-700 dark:text-zinc-600 text-[13px]">&#183;</span>
+            <time class="text-zinc-600 dark:text-zinc-500 text-[13px]">{formattedDate}</time>
             {data.readingTime && (
               <>
-                <span class="text-zinc-600 text-[13px]">&#183;</span>
-                <span class="text-zinc-500 text-[13px]">{data.readingTime.text}</span>
+                <span class="text-zinc-700 dark:text-zinc-600 text-[13px]">&#183;</span>
+                <span class="text-zinc-600 dark:text-zinc-500 text-[13px]">{data.readingTime.text}</span>
               </>
             )}
           </div>
@@ -66,11 +66,11 @@ export default function BlogPost({ data }: { data: any }) {
           <h1 class="text-3xl sm:text-4xl font-semibold text-zinc-900 dark:text-white tracking-tight mb-4">
             {data.title}
           </h1>
-          <p class="text-zinc-600 dark:text-zinc-400 text-[17px] leading-relaxed">{data.description}</p>
+          <p class="text-zinc-700 dark:text-zinc-400 text-[17px] leading-relaxed">{data.description}</p>
 
           {data.author && (
             <div class="mt-6 flex items-center gap-3">
-              <div class="w-8 h-8 rounded-full bg-zinc-200/70 dark:bg-white/[0.06] flex items-center justify-center text-[13px] text-zinc-600 dark:text-zinc-400 font-medium">
+              <div class="w-8 h-8 rounded-full bg-zinc-200/70 dark:bg-white/[0.06] flex items-center justify-center text-[13px] text-zinc-700 dark:text-zinc-400 font-medium">
                 {data.author.name.charAt(0)}
               </div>
               <div>
@@ -88,7 +88,7 @@ export default function BlogPost({ data }: { data: any }) {
           <div class="mt-12 pt-8 border-t border-zinc-200/70 dark:border-white/[0.06]">
             <div class="flex flex-wrap gap-2">
               {data.tags.map((tag: string) => (
-                <span class="px-3 py-1 text-[12px] text-zinc-500 bg-zinc-100/70 dark:bg-white/[0.03] border border-zinc-200/70 dark:border-white/[0.06] rounded-full">
+                <span class="px-3 py-1 text-[12px] text-zinc-600 dark:text-zinc-500 bg-zinc-100/70 dark:bg-white/[0.03] border border-zinc-200/70 dark:border-white/[0.06] rounded-full">
                   {tag}
                 </span>
               ))}
@@ -98,7 +98,7 @@ export default function BlogPost({ data }: { data: any }) {
 
         {/* Back link */}
         <div class="mt-12">
-          <a href="/blog" class="inline-flex items-center gap-2 text-[14px] text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">
+          <a href="/blog" class="inline-flex items-center gap-2 text-[14px] text-zinc-700 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
             </svg>

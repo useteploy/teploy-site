@@ -3,7 +3,7 @@ export default function ArchitectureDiagram() {
     <section id="architecture" class="py-20 relative">
       <div class="max-w-3xl mx-auto px-6 relative">
         <div class="text-center mb-10">
-          <p class="text-[11px] text-zinc-500 uppercase tracking-widest mb-3">Architecture</p>
+          <p class="text-[11px] text-zinc-600 dark:text-zinc-500 uppercase tracking-widest mb-3">Architecture</p>
           <h2 class="text-2xl font-semibold text-zinc-900 dark:text-white tracking-tight">
             Your infrastructure, simplified
           </h2>

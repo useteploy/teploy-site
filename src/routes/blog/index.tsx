@@ -33,7 +33,7 @@ export default function BlogIndex({ data }: { data: any }) {
           <h1 class="text-4xl sm:text-5xl font-semibold text-zinc-900 dark:text-white tracking-tight mb-6">
             News & Updates
           </h1>
-          <p class="text-zinc-600 dark:text-zinc-400 text-[16px] leading-relaxed max-w-2xl">
+          <p class="text-zinc-700 dark:text-zinc-400 text-[16px] leading-relaxed max-w-2xl">
             The latest from the Teploy team -- product updates, engineering insights, tutorials, and guides to help you deploy better.
           </p>
         </div>
@@ -70,14 +70,14 @@ export default function BlogIndex({ data }: { data: any }) {
         ) : (
           !data.featured && (
             <div class="text-center py-16">
-              <p class="text-zinc-500 text-[15px]">No posts yet. Check back soon!</p>
+              <p class="text-zinc-600 dark:text-zinc-500 text-[15px]">No posts yet. Check back soon!</p>
             </div>
           )
         )}
 
         <div class="mt-16 rounded-2xl border border-zinc-200/70 dark:border-white/[0.06] bg-zinc-100/60 dark:bg-white/[0.02] p-8 text-center">
           <h2 class="text-xl font-semibold text-zinc-900 dark:text-white mb-3">Stay Updated</h2>
-          <p class="text-zinc-500 text-[14px] mb-6 max-w-md mx-auto">
+          <p class="text-zinc-600 dark:text-zinc-500 text-[14px] mb-6 max-w-md mx-auto">
             Get the latest posts and product updates delivered to your inbox. No spam, unsubscribe anytime.
           </p>
           <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">

@@ -23,7 +23,7 @@ function LinkList({ title, links }: { title: string; links: { href: string; labe
       <ul class="space-y-3">
         {links.map((link) => (
           <li>
-            <a href={link.href} class="text-zinc-500 hover:text-zinc-900 dark:hover:text-white transition-colors text-[14px]">
+            <a href={link.href} class="text-zinc-600 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-white transition-colors text-[14px]">
               {link.label}
             </a>
           </li>
@@ -39,10 +39,10 @@ export default function Footer() {
       <div class="max-w-6xl mx-auto px-6 py-16">
         <div class="grid grid-cols-2 md:grid-cols-5 gap-8 lg:gap-12">
           <div class="col-span-2">
-            <a href="/" class="text-[15px] font-semibold text-zinc-900 dark:text-white hover:text-zinc-700 dark:hover:text-zinc-300 transition-colors inline-block mb-4">
+            <a href="/" class="text-[15px] font-semibold text-zinc-900 dark:text-white hover:text-zinc-800 dark:hover:text-zinc-300 transition-colors inline-block mb-4">
               Teploy
             </a>
-            <p class="text-zinc-500 text-[14px] max-w-xs mb-6 leading-relaxed">
+            <p class="text-zinc-600 dark:text-zinc-500 text-[14px] max-w-xs mb-6 leading-relaxed">
               Free, open source tools to deploy, monitor, and develop.
             </p>
           </div>
@@ -61,7 +61,7 @@ export default function Footer() {
           >
             neutron.
           </a>
-          <p class="text-zinc-600 text-[13px]">
+          <p class="text-zinc-700 dark:text-zinc-600 text-[13px]">
             &copy; {new Date().getFullYear()} Teploy. All rights reserved.
           </p>
         </div>

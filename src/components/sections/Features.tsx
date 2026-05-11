@@ -53,7 +53,7 @@ const colorStyles: Record<string, { badge: string; dot: string; icon: string; ic
   indigo: { badge: "bg-indigo-500/10 text-indigo-400 border border-indigo-500/20", dot: "bg-indigo-400", icon: "text-indigo-400", iconBg: "bg-indigo-500/10", cardHover: "hover:border-indigo-500/20" },
   sky: { badge: "bg-sky-500/10 text-sky-400 border border-sky-500/20", dot: "bg-sky-400", icon: "text-sky-400", iconBg: "bg-sky-500/10", cardHover: "hover:border-sky-500/20" },
   violet: { badge: "bg-violet-500/10 text-violet-400 border border-violet-500/20", dot: "bg-violet-400", icon: "text-violet-400", iconBg: "bg-violet-500/10", cardHover: "hover:border-violet-500/20" },
-  zinc: { badge: "bg-zinc-200/70 dark:bg-white/[0.06] text-zinc-600 dark:text-zinc-400 border border-zinc-200 dark:border-white/[0.08]", dot: "bg-zinc-400", icon: "text-zinc-600 dark:text-zinc-400", iconBg: "bg-zinc-200/70 dark:bg-white/[0.06]", cardHover: "hover:border-zinc-500/20" },
+  zinc: { badge: "bg-zinc-200/70 dark:bg-white/[0.06] text-zinc-700 dark:text-zinc-400 border border-zinc-200 dark:border-white/[0.08]", dot: "bg-zinc-400", icon: "text-zinc-700 dark:text-zinc-400", iconBg: "bg-zinc-200/70 dark:bg-white/[0.06]", cardHover: "hover:border-zinc-500/20" },
 };
 
 export default function Features() {
@@ -71,7 +71,7 @@ export default function Features() {
                     {cat.label}
                   </span>
                   <h2 class="text-2xl sm:text-3xl font-semibold text-zinc-900 dark:text-white tracking-tight mb-2">{cat.heading}</h2>
-                  <p class="text-[16px] text-zinc-600 dark:text-zinc-400 max-w-lg">{cat.subheading}</p>
+                  <p class="text-[16px] text-zinc-700 dark:text-zinc-400 max-w-lg">{cat.subheading}</p>
                 </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
                   {cat.features.map((f) => (
@@ -82,7 +82,7 @@ export default function Features() {
                         </svg>
                       </div>
                       <h3 class="text-[15px] font-medium text-zinc-900 dark:text-white mb-1.5">{f.title}</h3>
-                      <p class="text-[13px] text-zinc-500 leading-relaxed">{f.description}</p>
+                      <p class="text-[13px] text-zinc-600 dark:text-zinc-500 leading-relaxed">{f.description}</p>
                     </div>
                   ))}
                 </div>

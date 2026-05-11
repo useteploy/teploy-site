@@ -12,13 +12,13 @@ export default function Nav() {
       <div class="mx-auto max-w-6xl px-6">
         <div class="flex items-center justify-between h-14">
           <div class="flex items-center gap-8">
-            <a href="/" class="text-[15px] font-semibold tracking-tight text-zinc-900 dark:text-white hover:text-zinc-700 dark:hover:text-zinc-300 transition-colors">
+            <a href="/" class="text-[15px] font-semibold tracking-tight text-zinc-900 dark:text-white hover:text-zinc-800 dark:hover:text-zinc-300 transition-colors">
               Teploy
             </a>
 
             <nav class="hidden md:flex items-center gap-1">
               {navLinks.map((link) => (
-                <a href={link.href} class="px-3 py-1.5 text-[13px] text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors rounded-md hover:bg-zinc-100 dark:hover:bg-white/[0.04]">
+                <a href={link.href} class="px-3 py-1.5 text-[13px] text-zinc-700 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors rounded-md hover:bg-zinc-100 dark:hover:bg-white/[0.04]">
                   {link.label}
                 </a>
               ))}
@@ -38,7 +38,7 @@ export default function Nav() {
             <ThemeToggleButton />
             <button
               type="button"
-              class="p-2 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
+              class="p-2 text-zinc-700 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
               aria-label="Toggle menu"
               id="mobile-menu-toggle"
             >
@@ -56,23 +56,23 @@ export default function Nav() {
           <div class="grid grid-cols-2 gap-2">
             <a href="/cli" class="p-3 rounded-lg bg-indigo-500/10 border border-indigo-500/20">
               <div class="text-[13px] text-zinc-900 dark:text-white font-semibold">CLI</div>
-              <div class="text-[10px] text-zinc-600 dark:text-zinc-400">Zero-downtime deploys</div>
+              <div class="text-[10px] text-zinc-700 dark:text-zinc-400">Zero-downtime deploys</div>
             </a>
             <a href="/dash" class="p-3 rounded-lg bg-sky-500/10 border border-sky-500/20">
               <div class="text-[13px] text-zinc-900 dark:text-white font-semibold">Dash</div>
-              <div class="text-[10px] text-zinc-600 dark:text-zinc-400">Web UI + uptime</div>
+              <div class="text-[10px] text-zinc-700 dark:text-zinc-400">Web UI + uptime</div>
             </a>
             <a href="/observe" class="p-3 rounded-lg bg-violet-500/10 border border-violet-500/20">
               <div class="text-[13px] text-zinc-900 dark:text-white font-semibold">Observe</div>
-              <div class="text-[10px] text-zinc-600 dark:text-zinc-400">Analytics & APM</div>
+              <div class="text-[10px] text-zinc-700 dark:text-zinc-400">Analytics & APM</div>
             </a>
             <a href="/trmnl" class="p-3 rounded-lg bg-zinc-100 dark:bg-white/[0.04] border border-zinc-200 dark:border-white/[0.08]">
               <div class="text-[13px] text-zinc-900 dark:text-white font-semibold">trmnl</div>
-              <div class="text-[10px] text-zinc-600 dark:text-zinc-400">Terminal IDE</div>
+              <div class="text-[10px] text-zinc-700 dark:text-zinc-400">Terminal IDE</div>
             </a>
             <a href="/docs" class="p-3 rounded-lg bg-zinc-100 dark:bg-white/[0.04] border border-zinc-200 dark:border-white/[0.08] col-span-2">
               <div class="text-[13px] text-zinc-900 dark:text-white font-semibold">Docs</div>
-              <div class="text-[10px] text-zinc-600 dark:text-zinc-400">Guides & reference</div>
+              <div class="text-[10px] text-zinc-700 dark:text-zinc-400">Guides & reference</div>
             </a>
           </div>
 

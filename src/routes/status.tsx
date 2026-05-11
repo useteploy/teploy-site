@@ -49,11 +49,11 @@ export default function Status() {
       <div class="max-w-3xl mx-auto px-6">
         {/* Header */}
         <div class="mb-12">
-          <p class="text-zinc-500 text-[13px] font-medium uppercase tracking-wider mb-4">System Status</p>
+          <p class="text-zinc-600 dark:text-zinc-500 text-[13px] font-medium uppercase tracking-wider mb-4">System Status</p>
           <h1 class="text-4xl sm:text-5xl font-semibold text-zinc-900 dark:text-white tracking-tight mb-6">
             All Systems Operational
           </h1>
-          <p class="text-zinc-600 dark:text-zinc-400 text-[16px] leading-relaxed">
+          <p class="text-zinc-700 dark:text-zinc-400 text-[16px] leading-relaxed">
             Current status of Teploy services. Updated in real-time.
           </p>
         </div>
@@ -64,7 +64,7 @@ export default function Status() {
             <div class="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></div>
             <span class="text-emerald-400 font-medium">All systems are operational</span>
           </div>
-          <p class="text-zinc-500 text-[14px] mt-2">
+          <p class="text-zinc-600 dark:text-zinc-500 text-[14px] mt-2">
             Last updated: {new Date().toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' })}
           </p>
         </div>
@@ -80,7 +80,7 @@ export default function Status() {
                   <span class="text-zinc-900 dark:text-white text-[14px] font-medium">{service.name}</span>
                 </div>
                 <div class="flex items-center gap-4">
-                  <span class="text-zinc-500 text-[13px]">{service.uptime} uptime</span>
+                  <span class="text-zinc-600 dark:text-zinc-500 text-[13px]">{service.uptime} uptime</span>
                   <span class="text-emerald-400 text-[13px] capitalize">{service.status}</span>
                 </div>
               </div>
@@ -101,12 +101,12 @@ export default function Status() {
                 ></div>
               ))}
             </div>
-            <div class="flex justify-between mt-4 text-zinc-600 text-[12px]">
+            <div class="flex justify-between mt-4 text-zinc-700 dark:text-zinc-600 text-[12px]">
               <span>90 days ago</span>
               <span>Today</span>
             </div>
             <div class="mt-4 pt-4 border-t border-zinc-200/70 dark:border-white/[0.06] flex items-center justify-between">
-              <span class="text-zinc-500 text-[14px]">Overall uptime</span>
+              <span class="text-zinc-600 dark:text-zinc-500 text-[14px]">Overall uptime</span>
               <span class="text-zinc-900 dark:text-white font-semibold">99.97%</span>
             </div>
           </div>
@@ -124,18 +124,18 @@ export default function Status() {
                       <span class="px-2.5 py-1 bg-emerald-500/10 text-emerald-400 text-[11px] font-medium uppercase tracking-wider rounded-full">
                         {incident.status}
                       </span>
-                      <span class="text-zinc-500 text-[13px]">{incident.date}</span>
+                      <span class="text-zinc-600 dark:text-zinc-500 text-[13px]">{incident.date}</span>
                     </div>
-                    <span class="text-zinc-600 text-[13px]">Duration: {incident.duration}</span>
+                    <span class="text-zinc-700 dark:text-zinc-600 text-[13px]">Duration: {incident.duration}</span>
                   </div>
                   <h3 class="text-zinc-900 dark:text-white font-medium text-[15px] mb-2">{incident.title}</h3>
-                  <p class="text-zinc-500 text-[14px]">{incident.description}</p>
+                  <p class="text-zinc-600 dark:text-zinc-500 text-[14px]">{incident.description}</p>
                 </div>
               ))}
             </div>
           ) : (
             <div class="p-6 rounded-xl border border-zinc-200/70 dark:border-white/[0.06] bg-zinc-100/60 dark:bg-white/[0.02] text-center">
-              <p class="text-zinc-500 text-[14px]">No recent incidents</p>
+              <p class="text-zinc-600 dark:text-zinc-500 text-[14px]">No recent incidents</p>
             </div>
           )}
         </div>
@@ -143,7 +143,7 @@ export default function Status() {
         {/* Subscribe */}
         <div class="rounded-2xl border border-zinc-200/70 dark:border-white/[0.06] bg-zinc-100/60 dark:bg-white/[0.02] p-8 text-center">
           <h2 class="text-xl font-semibold text-zinc-900 dark:text-white mb-3">Get Status Updates</h2>
-          <p class="text-zinc-500 text-[14px] mb-6 max-w-md mx-auto">
+          <p class="text-zinc-600 dark:text-zinc-500 text-[14px] mb-6 max-w-md mx-auto">
             Subscribe to receive notifications about scheduled maintenance and service disruptions.
           </p>
           <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">

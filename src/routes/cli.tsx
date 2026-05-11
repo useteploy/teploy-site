@@ -18,22 +18,22 @@ export default function Cli() {
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold text-zinc-900 dark:text-white tracking-tight mb-6">
             Deploy to any server,<br class="hidden sm:block" /> zero downtime
           </h1>
-          <p class="text-zinc-600 dark:text-zinc-400 text-lg leading-relaxed max-w-2xl mx-auto mb-10">
+          <p class="text-zinc-700 dark:text-zinc-400 text-lg leading-relaxed max-w-2xl mx-auto mb-10">
             A single Go binary. SSH into any server. Three lines of config. Zero-downtime deploys
             with automatic rollback. No management server, no dependencies.
           </p>
           <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <div class="px-6 py-3 bg-zinc-100 dark:bg-zinc-800 border border-zinc-700 rounded-lg font-mono text-[14px] text-zinc-700 dark:text-zinc-300">
+            <div class="px-6 py-3 bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-lg font-mono text-[14px] text-zinc-700 dark:text-zinc-300">
               brew install useteploy/tap/teploy
             </div>
-            <a href="/docs/getting-started/quick-start" class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white text-[14px] font-medium transition-colors">
+            <a href="/docs/getting-started/quick-start" class="text-zinc-700 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white text-[14px] font-medium transition-colors">
               Quick start &rarr;
             </a>
           </div>
         </div>
 
         {/* Terminal Demo */}
-        <div class="mb-24 rounded-2xl border border-zinc-200 dark:border-white/[0.08] bg-gradient-to-b from-zinc-900 to-zinc-950 overflow-hidden shadow-2xl">
+        <div class="mb-24 rounded-2xl border border-zinc-200 dark:border-white/[0.08] bg-gradient-to-b from-zinc-50 to-white dark:from-zinc-900 dark:to-zinc-950 overflow-hidden shadow-2xl">
           <div class="flex items-center gap-2 px-4 py-3 bg-white dark:bg-zinc-900 border-b border-zinc-200/70 dark:border-white/[0.06]">
             <div class="flex items-center gap-1.5">
               <div class="w-3 h-3 rounded-full bg-zinc-200 dark:bg-zinc-700"></div>
@@ -42,11 +42,11 @@ export default function Cli() {
             </div>
           </div>
           <div class="p-6 font-mono text-[13px] leading-relaxed">
-            <p class="text-zinc-500">$ cat teploy.yml</p>
+            <p class="text-zinc-600 dark:text-zinc-500">$ cat teploy.yml</p>
             <p class="text-zinc-700 dark:text-zinc-300 mt-1">app: myapp</p>
             <p class="text-zinc-700 dark:text-zinc-300">domain: myapp.com</p>
             <p class="text-zinc-700 dark:text-zinc-300">server: 1.2.3.4</p>
-            <p class="text-zinc-500 mt-4">$ teploy deploy</p>
+            <p class="text-zinc-600 dark:text-zinc-500 mt-4">$ teploy deploy</p>
             <p class="text-indigo-400 mt-1">Building from Dockerfile...</p>
             <p class="text-indigo-400">Starting new container on port 3001</p>
             <p class="text-indigo-400">Health check passed</p>
@@ -61,7 +61,7 @@ export default function Cli() {
           <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div>
               <h3 class="text-lg font-semibold text-zinc-900 dark:text-white mb-2">Want a web UI?</h3>
-              <p class="text-zinc-600 dark:text-zinc-400 text-[14px] leading-relaxed max-w-xl">
+              <p class="text-zinc-700 dark:text-zinc-400 text-[14px] leading-relaxed max-w-xl">
                 Run <span class="font-mono text-zinc-700 dark:text-zinc-300 text-[13px]">teploy ui</span> for a local dashboard, or deploy <a href="/dash" class="text-sky-400 hover:text-sky-300 underline underline-offset-2">teploy Dash</a> standalone for 24/7 monitoring with HTTP/TCP health checks. Same binary, same state files — no desync.
               </p>
             </div>
