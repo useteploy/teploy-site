@@ -51,10 +51,10 @@ export default function Support() {
         {/* Header */}
         <div class="text-center mb-16">
           <p class="text-zinc-500 text-[13px] font-medium uppercase tracking-wider mb-4">Support</p>
-          <h1 class="text-4xl sm:text-5xl font-semibold text-white tracking-tight mb-6">
+          <h1 class="text-4xl sm:text-5xl font-semibold text-zinc-900 dark:text-white tracking-tight mb-6">
             How Can We Help?
           </h1>
-          <p class="text-zinc-400 text-[16px] leading-relaxed max-w-lg mx-auto">
+          <p class="text-zinc-600 dark:text-zinc-400 text-[16px] leading-relaxed max-w-lg mx-auto">
             Find answers in our docs, join the community, or reach out to our support team.
           </p>
         </div>
@@ -64,9 +64,9 @@ export default function Support() {
           {resources.map((resource) => (
             <a
               href={resource.href}
-              class="group p-5 rounded-xl border border-white/[0.06] bg-white/[0.02] hover:border-white/[0.1] hover:bg-white/[0.03] transition-all"
+              class="group p-5 rounded-xl border border-zinc-200/70 dark:border-white/[0.06] bg-zinc-100/60 dark:bg-white/[0.02] hover:border-zinc-300 dark:hover:border-white/[0.1] hover:bg-zinc-100/70 dark:hover:bg-white/[0.03] transition-all"
             >
-              <h3 class="text-white font-medium text-[15px] mb-1 flex items-center gap-2">
+              <h3 class="text-zinc-900 dark:text-white font-medium text-[15px] mb-1 flex items-center gap-2">
                 {resource.title}
               </h3>
               <p class="text-zinc-500 text-[14px] leading-relaxed">{resource.description}</p>
@@ -76,12 +76,12 @@ export default function Support() {
 
         {/* FAQ */}
         <div class="mb-16">
-          <h2 class="text-2xl font-semibold text-white mb-8">Frequently Asked Questions</h2>
+          <h2 class="text-2xl font-semibold text-zinc-900 dark:text-white mb-8">Frequently Asked Questions</h2>
           <div class="space-y-4">
             {faqs.map((faq) => (
-              <details class="group border border-white/[0.06] rounded-lg bg-white/[0.02]">
+              <details class="group border border-zinc-200/70 dark:border-white/[0.06] rounded-lg bg-zinc-100/60 dark:bg-white/[0.02]">
                 <summary class="flex items-center justify-between p-5 cursor-pointer list-none">
-                  <span class="text-white font-medium text-[15px] pr-4">{faq.question}</span>
+                  <span class="text-zinc-900 dark:text-white font-medium text-[15px] pr-4">{faq.question}</span>
                   <svg class="w-5 h-5 text-zinc-500 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                   </svg>
@@ -95,10 +95,10 @@ export default function Support() {
         </div>
 
         {/* Contact Support */}
-        <div class="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-8">
+        <div class="rounded-2xl border border-zinc-200/70 dark:border-white/[0.06] bg-zinc-100/60 dark:bg-white/[0.02] p-8">
           <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
             <div>
-              <h2 class="text-xl font-semibold text-white mb-2">Still Need Help?</h2>
+              <h2 class="text-xl font-semibold text-zinc-900 dark:text-white mb-2">Still Need Help?</h2>
               <p class="text-zinc-500 text-[14px]">
                 Our support team is available Monday–Friday, 9am–6pm EST.
               </p>
@@ -112,7 +112,7 @@ export default function Support() {
               </a>
               <a
                 href="/contact"
-                class="px-6 py-2.5 bg-white/[0.06] text-white text-[14px] font-medium rounded-lg hover:bg-white/[0.1] transition-colors text-center"
+                class="px-6 py-2.5 bg-zinc-200/70 dark:bg-white/[0.06] text-zinc-900 dark:text-white text-[14px] font-medium rounded-lg hover:bg-white/[0.1] transition-colors text-center"
               >
                 Contact Form
               </a>

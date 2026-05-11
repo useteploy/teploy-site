@@ -30,10 +30,10 @@ export default function BlogIndex({ data }: { data: any }) {
       <div class="max-w-4xl mx-auto px-6">
         <div class="mb-16">
           <p class="text-indigo-400 text-[13px] font-medium uppercase tracking-wider mb-4">Blog</p>
-          <h1 class="text-4xl sm:text-5xl font-semibold text-white tracking-tight mb-6">
+          <h1 class="text-4xl sm:text-5xl font-semibold text-zinc-900 dark:text-white tracking-tight mb-6">
             News & Updates
           </h1>
-          <p class="text-zinc-400 text-[16px] leading-relaxed max-w-2xl">
+          <p class="text-zinc-600 dark:text-zinc-400 text-[16px] leading-relaxed max-w-2xl">
             The latest from the Teploy team -- product updates, engineering insights, tutorials, and guides to help you deploy better.
           </p>
         </div>
@@ -75,8 +75,8 @@ export default function BlogIndex({ data }: { data: any }) {
           )
         )}
 
-        <div class="mt-16 rounded-2xl border border-white/[0.06] bg-white/[0.02] p-8 text-center">
-          <h2 class="text-xl font-semibold text-white mb-3">Stay Updated</h2>
+        <div class="mt-16 rounded-2xl border border-zinc-200/70 dark:border-white/[0.06] bg-zinc-100/60 dark:bg-white/[0.02] p-8 text-center">
+          <h2 class="text-xl font-semibold text-zinc-900 dark:text-white mb-3">Stay Updated</h2>
           <p class="text-zinc-500 text-[14px] mb-6 max-w-md mx-auto">
             Get the latest posts and product updates delivered to your inbox. No spam, unsubscribe anytime.
           </p>
@@ -85,7 +85,7 @@ export default function BlogIndex({ data }: { data: any }) {
               type="email"
               placeholder="you@company.com"
               required
-              class="flex-1 px-4 py-3 bg-white/[0.04] border border-white/[0.08] rounded-lg text-white text-[14px] placeholder-zinc-600 focus:outline-none focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/50 transition-colors"
+              class="flex-1 px-4 py-3 bg-zinc-100 dark:bg-white/[0.04] border border-zinc-200 dark:border-white/[0.08] rounded-lg text-zinc-900 dark:text-white text-[14px] placeholder-zinc-600 focus:outline-none focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/50 transition-colors"
             />
             <button
               type="submit"

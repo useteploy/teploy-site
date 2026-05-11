@@ -403,3 +403,64 @@ section.observe-compare .compare-table thead th.highlight {
 
 :root[data-theme='light'] .faq h3 { color: #09090b; }
 :root[data-theme='light'] .faq p { color: #52525b; }
+
+/* Observe + CLI: tier toggle, tool cards, observe cards, step cards.
+   Most rules below mirror dark semantics by swapping white-on-black for
+   black-on-white surfaces. Borders track --bp-border (defined in global.css)
+   so they stay in sync if the palette ever changes. */
+
+/* Tier toggle */
+:root[data-theme='light'] .tier-btn {
+  color: #52525b;
+}
+:root[data-theme='light'] .tier-btn:hover {
+  color: #09090b;
+}
+:root[data-theme='light'] .tier-btn.active {
+  color: #09090b;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* Tool cards (Observe "what you're paying" grid) */
+:root[data-theme='light'] .tool-card {
+  background: rgba(0, 0, 0, 0.015);
+  border-color: var(--bp-border);
+}
+:root[data-theme='light'] .tool-name { color: #09090b; }
+:root[data-theme='light'] .tool-desc { color: #71717a; }
+:root[data-theme='light'] .tool-price { color: #09090b; }
+
+/* Consolidated Observe card — keep violet tint but soften to read on white */
+:root[data-theme='light'] .observe-card {
+  background: linear-gradient(180deg, rgba(139, 92, 246, 0.05), rgba(139, 92, 246, 0.015));
+  border-color: rgba(139, 92, 246, 0.25);
+}
+:root[data-theme='light'] .observe-header {
+  border-bottom-color: var(--bp-border);
+}
+:root[data-theme='light'] .observe-feat { color: #3f3f46; }
+
+/* Vertical breakdown cards */
+:root[data-theme='light'] .observe-vertical {
+  background: rgba(0, 0, 0, 0.015);
+  border-color: var(--bp-border);
+}
+:root[data-theme='light'] .observe-vertical.unified {
+  background: linear-gradient(180deg, rgba(139, 92, 246, 0.05), rgba(139, 92, 246, 0.015));
+  border-color: rgba(139, 92, 246, 0.25);
+}
+:root[data-theme='light'] .vertical-list li { color: #52525b; }
+:root[data-theme='light'] .vertical-list li::before {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Step cards (Observe quickstart) */
+:root[data-theme='light'] .step-card {
+  background: rgba(0, 0, 0, 0.015);
+  border-color: var(--bp-border);
+}
+:root[data-theme='light'] .step-code {
+  color: #18181b;
+  background: rgba(0, 0, 0, 0.04);
+  border-color: var(--bp-border);
+}

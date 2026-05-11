@@ -4,13 +4,13 @@ export default function ArchitectureDiagram() {
       <div class="max-w-3xl mx-auto px-6 relative">
         <div class="text-center mb-10">
           <p class="text-[11px] text-zinc-500 uppercase tracking-widest mb-3">Architecture</p>
-          <h2 class="text-2xl font-semibold text-white tracking-tight">
+          <h2 class="text-2xl font-semibold text-zinc-900 dark:text-white tracking-tight">
             Your infrastructure, simplified
           </h2>
         </div>
 
         <div class="max-w-2xl mx-auto">
-          <div class="relative p-6 rounded-xl bg-white/[0.02] border border-white/[0.06]">
+          <div class="relative p-6 rounded-xl bg-zinc-100/60 dark:bg-white/[0.02] border border-zinc-200/70 dark:border-white/[0.06]">
             <svg viewBox="0 0 600 320" class="w-full h-auto">
               <defs>
                 <filter id="softGlow" x="-100%" y="-100%" width="300%" height="300%">

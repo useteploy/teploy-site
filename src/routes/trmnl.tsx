@@ -67,23 +67,23 @@ export default function Trmnl() {
       <div class="max-w-5xl mx-auto px-6">
         {/* Hero */}
         <div class="text-center mb-20">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-500/10 border border-zinc-500/20 text-zinc-400 text-[12px] font-medium mb-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-500/10 border border-zinc-500/20 text-zinc-600 dark:text-zinc-400 text-[12px] font-medium mb-6">
             <span class="w-1.5 h-1.5 rounded-full bg-zinc-400"></span>
             Free, open source
           </div>
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white tracking-tight mb-6">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold text-zinc-900 dark:text-white tracking-tight mb-6">
             Terminal IDE,<br class="hidden sm:block" /> ready to go
           </h1>
-          <p class="text-zinc-400 text-lg leading-relaxed max-w-2xl mx-auto mb-10">
+          <p class="text-zinc-600 dark:text-zinc-400 text-lg leading-relaxed max-w-2xl mx-auto mb-10">
             A curated terminal development environment. Neovim, Zellij, Lazygit, and 50+ tools
             pre-configured with Tokyo Night theming across everything.
           </p>
           <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <div class="px-6 py-3 bg-zinc-800 border border-zinc-700 rounded-lg font-mono text-[14px] text-zinc-300">
+            <div class="px-6 py-3 bg-zinc-100 dark:bg-zinc-800 border border-zinc-700 rounded-lg font-mono text-[14px] text-zinc-700 dark:text-zinc-300">
               brew install useteploy/tap/trmnl
             </div>
             <span class="text-zinc-600 text-[13px]">or</span>
-            <div class="px-6 py-3 bg-zinc-800 border border-zinc-700 rounded-lg font-mono text-[14px] text-zinc-300">
+            <div class="px-6 py-3 bg-zinc-100 dark:bg-zinc-800 border border-zinc-700 rounded-lg font-mono text-[14px] text-zinc-700 dark:text-zinc-300">
               curl -fsSL https://raw.githubusercontent.com/useteploy/trmnl/main/install.sh | bash
             </div>
           </div>
@@ -91,12 +91,12 @@ export default function Trmnl() {
         </div>
 
         {/* Terminal Preview */}
-        <div class="mb-24 rounded-2xl border border-white/[0.08] bg-gradient-to-b from-zinc-900 to-zinc-950 overflow-hidden shadow-2xl">
-          <div class="flex items-center gap-2 px-4 py-3 bg-zinc-900 border-b border-white/[0.06]">
+        <div class="mb-24 rounded-2xl border border-zinc-200 dark:border-white/[0.08] bg-gradient-to-b from-zinc-900 to-zinc-950 overflow-hidden shadow-2xl">
+          <div class="flex items-center gap-2 px-4 py-3 bg-white dark:bg-zinc-900 border-b border-zinc-200/70 dark:border-white/[0.06]">
             <div class="flex items-center gap-1.5">
-              <div class="w-3 h-3 rounded-full bg-zinc-700"></div>
-              <div class="w-3 h-3 rounded-full bg-zinc-700"></div>
-              <div class="w-3 h-3 rounded-full bg-zinc-700"></div>
+              <div class="w-3 h-3 rounded-full bg-zinc-200 dark:bg-zinc-700"></div>
+              <div class="w-3 h-3 rounded-full bg-zinc-200 dark:bg-zinc-700"></div>
+              <div class="w-3 h-3 rounded-full bg-zinc-200 dark:bg-zinc-700"></div>
             </div>
             <div class="flex-1 flex justify-center">
               <span class="text-[11px] text-zinc-500 font-mono">trmnl</span>
@@ -104,14 +104,14 @@ export default function Trmnl() {
           </div>
           <div class="p-6 font-mono text-[13px] leading-relaxed">
             <p class="text-zinc-500">$ trmnl setup</p>
-            <p class="text-zinc-400 mt-2">Setting up Terminal IDE...</p>
+            <p class="text-zinc-600 dark:text-zinc-400 mt-2">Setting up Terminal IDE...</p>
             <p class="text-green-400 mt-1">  &gt; Linking configs...</p>
-            <p class="text-zinc-400 mt-1">    &#x2713; nvim</p>
-            <p class="text-zinc-400">    &#x2713; zellij</p>
-            <p class="text-zinc-400">    &#x2713; yazi</p>
-            <p class="text-zinc-400">    &#x2713; starship</p>
-            <p class="text-zinc-400">    &#x2713; gitconfig (include added)</p>
-            <p class="text-zinc-400">    &#x2713; zshrc</p>
+            <p class="text-zinc-600 dark:text-zinc-400 mt-1">    &#x2713; nvim</p>
+            <p class="text-zinc-600 dark:text-zinc-400">    &#x2713; zellij</p>
+            <p class="text-zinc-600 dark:text-zinc-400">    &#x2713; yazi</p>
+            <p class="text-zinc-600 dark:text-zinc-400">    &#x2713; starship</p>
+            <p class="text-zinc-600 dark:text-zinc-400">    &#x2713; gitconfig (include added)</p>
+            <p class="text-zinc-600 dark:text-zinc-400">    &#x2713; zshrc</p>
             <p class="text-green-400 mt-2">  Setup complete!</p>
             <p class="text-zinc-500 mt-3">$ trmnl</p>
             <p class="text-zinc-500 mt-1">{/* launches zellij with neovim */}</p>
@@ -120,18 +120,18 @@ export default function Trmnl() {
 
         {/* Features */}
         <div class="mb-16">
-          <h2 class="text-2xl sm:text-3xl font-semibold text-white mb-4">What's included</h2>
-          <p class="text-zinc-400 text-[16px] max-w-lg mb-8">A complete terminal development environment in one install.</p>
+          <h2 class="text-2xl sm:text-3xl font-semibold text-zinc-900 dark:text-white mb-4">What's included</h2>
+          <p class="text-zinc-600 dark:text-zinc-400 text-[16px] max-w-lg mb-8">A complete terminal development environment in one install.</p>
         </div>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-24">
           {features.map((feature) => (
-            <div class="group p-5 rounded-xl bg-white/[0.02] border border-white/[0.06] hover:bg-white/[0.03] hover:border-zinc-500/20 transition-all">
-              <div class="w-8 h-8 rounded-lg bg-white/[0.06] flex items-center justify-center mb-3">
-                <svg class="w-4 h-4 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="group p-5 rounded-xl bg-zinc-100/60 dark:bg-white/[0.02] border border-zinc-200/70 dark:border-white/[0.06] hover:bg-zinc-100/70 dark:hover:bg-white/[0.03] hover:border-zinc-500/20 transition-all">
+              <div class="w-8 h-8 rounded-lg bg-zinc-200/70 dark:bg-white/[0.06] flex items-center justify-center mb-3">
+                <svg class="w-4 h-4 text-zinc-600 dark:text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={feature.icon} />
                 </svg>
               </div>
-              <h3 class="text-[15px] font-medium text-white mb-1.5">{feature.title}</h3>
+              <h3 class="text-[15px] font-medium text-zinc-900 dark:text-white mb-1.5">{feature.title}</h3>
               <p class="text-[13px] text-zinc-500 leading-relaxed">{feature.description}</p>
             </div>
           ))}
@@ -139,8 +139,8 @@ export default function Trmnl() {
 
         {/* Built With */}
         <div class="mb-24">
-          <h2 class="text-2xl sm:text-3xl font-semibold text-white mb-4">Built with</h2>
-          <p class="text-zinc-400 text-[16px] max-w-lg mb-8">trmnl bundles and configures open source tools. Full credit to their authors.</p>
+          <h2 class="text-2xl sm:text-3xl font-semibold text-zinc-900 dark:text-white mb-4">Built with</h2>
+          <p class="text-zinc-600 dark:text-zinc-400 text-[16px] max-w-lg mb-8">trmnl bundles and configures open source tools. Full credit to their authors.</p>
 
           <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
             {stack.map((tool) => (
@@ -148,13 +148,13 @@ export default function Trmnl() {
                 href={tool.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="flex items-center justify-between p-4 rounded-lg bg-white/[0.02] border border-white/[0.06] hover:bg-white/[0.04] hover:border-zinc-500/20 transition-all group"
+                class="flex items-center justify-between p-4 rounded-lg bg-zinc-100/60 dark:bg-white/[0.02] border border-zinc-200/70 dark:border-white/[0.06] hover:bg-zinc-100 dark:hover:bg-white/[0.04] hover:border-zinc-500/20 transition-all group"
               >
                 <div>
-                  <p class="text-[14px] font-medium text-white group-hover:text-zinc-200">{tool.name}</p>
+                  <p class="text-[14px] font-medium text-zinc-900 dark:text-white group-hover:text-zinc-200">{tool.name}</p>
                   <p class="text-[12px] text-zinc-600">{tool.role}</p>
                 </div>
-                <svg class="w-3.5 h-3.5 text-zinc-600 group-hover:text-zinc-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-3.5 h-3.5 text-zinc-600 group-hover:text-zinc-600 dark:group-hover:text-zinc-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
               </a>
@@ -167,7 +167,7 @@ export default function Trmnl() {
                 href={tool.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="px-3 py-1.5 rounded-md bg-white/[0.02] border border-white/[0.06] text-[13px] text-zinc-500 hover:text-zinc-300 hover:border-zinc-500/20 transition-all font-mono"
+                class="px-3 py-1.5 rounded-md bg-zinc-100/60 dark:bg-white/[0.02] border border-zinc-200/70 dark:border-white/[0.06] text-[13px] text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300 hover:border-zinc-500/20 transition-all font-mono"
               >
                 {tool.name}
               </a>
@@ -177,8 +177,8 @@ export default function Trmnl() {
 
         {/* CTA */}
         <div class="text-center">
-          <h2 class="text-2xl font-semibold text-white mb-4">Get started</h2>
-          <p class="text-zinc-400 text-[15px] mb-6">Install in under a minute. Run <span class="font-mono text-zinc-300">trmnl doctor</span> to verify.</p>
+          <h2 class="text-2xl font-semibold text-zinc-900 dark:text-white mb-4">Get started</h2>
+          <p class="text-zinc-600 dark:text-zinc-400 text-[15px] mb-6">Install in under a minute. Run <span class="font-mono text-zinc-700 dark:text-zinc-300">trmnl doctor</span> to verify.</p>
           <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="https://github.com/useteploy/trmnl"
@@ -188,7 +188,7 @@ export default function Trmnl() {
             >
               View on GitHub
             </a>
-            <a href="/docs" class="text-zinc-400 hover:text-white text-[14px] font-medium transition-colors">
+            <a href="/docs" class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white text-[14px] font-medium transition-colors">
               Read the docs &rarr;
             </a>
           </div>

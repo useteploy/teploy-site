@@ -15,19 +15,19 @@ export default function Observe() {
             <span class="w-1.5 h-1.5 rounded-full bg-violet-400"></span>
             Free, open source
           </div>
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white tracking-tight mb-6">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold text-zinc-900 dark:text-white tracking-tight mb-6">
             Four tools.<br class="hidden sm:block" />
             One binary.
           </h1>
-          <p class="text-zinc-400 text-lg leading-relaxed max-w-2xl mx-auto mb-10">
+          <p class="text-zinc-600 dark:text-zinc-400 text-lg leading-relaxed max-w-2xl mx-auto mb-10">
             Analytics, APM, error tracking, and session replay — in a single self-hosted binary.
             One tool instead of four. Your data on your server. No per-seat pricing, no data caps.
           </p>
           <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <div class="px-6 py-3 bg-zinc-800 border border-zinc-700 rounded-lg font-mono text-[14px] text-zinc-300">
+            <div class="px-6 py-3 bg-zinc-100 dark:bg-zinc-800 border border-zinc-700 rounded-lg font-mono text-[14px] text-zinc-700 dark:text-zinc-300">
               brew install useteploy/tap/observe
             </div>
-            <a href="/docs/getting-started/introduction" class="text-zinc-400 hover:text-white text-[14px] font-medium transition-colors">
+            <a href="/docs/getting-started/introduction" class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white text-[14px] font-medium transition-colors">
               Read the docs &rarr;
             </a>
           </div>
@@ -37,7 +37,7 @@ export default function Observe() {
         <div class="mb-24">
           {/* Tier toggle */}
           <div class="flex justify-center mb-8">
-            <div class="inline-flex items-center bg-zinc-900 border border-white/[0.06] rounded-lg p-1" id="tier-toggle">
+            <div class="inline-flex items-center bg-white dark:bg-zinc-900 border border-zinc-200/70 dark:border-white/[0.06] rounded-lg p-1" id="tier-toggle">
               <button class="tier-btn active" data-tier="small">Growing SaaS</button>
               <button class="tier-btn" data-tier="growing">Scaling up</button>
             </div>
@@ -79,10 +79,10 @@ export default function Observe() {
                   <span class="tool-price">$20/mo</span>
                 </div>
               </div>
-              <div class="mt-4 pt-4 border-t border-white/[0.06] flex justify-between">
+              <div class="mt-4 pt-4 border-t border-zinc-200/70 dark:border-white/[0.06] flex justify-between">
                 <span class="text-zinc-500 text-[13px]">4 tools, 4 dashboards, data doesn't connect</span>
                 <div>
-                  <span class="text-white text-lg font-semibold">~$610</span>
+                  <span class="text-zinc-900 dark:text-white text-lg font-semibold">~$610</span>
                   <span class="text-zinc-500 text-[13px]">/mo</span>
                 </div>
               </div>
@@ -122,10 +122,10 @@ export default function Observe() {
                   <span class="tool-price">$20/mo</span>
                 </div>
               </div>
-              <div class="mt-4 pt-4 border-t border-white/[0.06] flex justify-between">
+              <div class="mt-4 pt-4 border-t border-zinc-200/70 dark:border-white/[0.06] flex justify-between">
                 <span class="text-zinc-500 text-[13px]">Same 4 tools, bills scaling fast</span>
                 <div>
-                  <span class="text-white text-lg font-semibold">~$3,780</span>
+                  <span class="text-zinc-900 dark:text-white text-lg font-semibold">~$3,780</span>
                   <span class="text-zinc-500 text-[13px]">/mo</span>
                 </div>
               </div>
@@ -137,8 +137,8 @@ export default function Observe() {
               <div class="observe-card">
                 <div class="observe-header">
                   <div>
-                    <div class="text-white text-xl font-semibold mb-1">teploy Observe</div>
-                    <div class="text-zinc-400 text-[14px]">Analytics + APM + Errors + Sessions</div>
+                    <div class="text-zinc-900 dark:text-white text-xl font-semibold mb-1">teploy Observe</div>
+                    <div class="text-zinc-600 dark:text-zinc-400 text-[14px]">Analytics + APM + Errors + Sessions</div>
                   </div>
                   <div class="text-right">
                     <div class="text-3xl font-bold text-violet-400">$0</div>
@@ -164,7 +164,7 @@ export default function Observe() {
                   </div>
                 </div>
               </div>
-              <div class="mt-4 pt-4 border-t border-white/[0.06] flex justify-between">
+              <div class="mt-4 pt-4 border-t border-zinc-200/70 dark:border-white/[0.06] flex justify-between">
                 <span class="text-zinc-500 text-[13px]">1 dashboard, 1 install, 0 bills</span>
                 <div>
                   <span class="text-violet-400 text-lg font-semibold">Save $7,300–$45,000+</span>
@@ -178,10 +178,10 @@ export default function Observe() {
         {/* What's Inside */}
         <div class="mb-24">
           <div class="text-center mb-16">
-            <h2 class="text-3xl sm:text-4xl font-semibold text-white tracking-tight mb-4">
+            <h2 class="text-3xl sm:text-4xl font-semibold text-zinc-900 dark:text-white tracking-tight mb-4">
               Everything observability, nothing else
             </h2>
-            <p class="text-zinc-400 text-[16px] max-w-xl mx-auto">
+            <p class="text-zinc-600 dark:text-zinc-400 text-[16px] max-w-xl mx-auto">
               Each vertical replaces a dedicated tool. They share a unified data layer, so insights connect automatically.
             </p>
           </div>
@@ -190,8 +190,8 @@ export default function Observe() {
             {/* Analytics */}
             <div class="observe-vertical">
               <div class="vertical-badge analytics">Replaces PostHog + Umami</div>
-              <h3 class="text-lg font-semibold text-white mb-2">Web Analytics</h3>
-              <p class="text-zinc-400 text-[14px] mb-4">Privacy-first, cookie-free analytics. No consent banners needed.</p>
+              <h3 class="text-lg font-semibold text-zinc-900 dark:text-white mb-2">Web Analytics</h3>
+              <p class="text-zinc-600 dark:text-zinc-400 text-[14px] mb-4">Privacy-first, cookie-free analytics. No consent banners needed.</p>
               <ul class="vertical-list">
                 <li>Pageviews, sessions, unique visitors</li>
                 <li>Custom events with properties</li>
@@ -206,8 +206,8 @@ export default function Observe() {
             {/* APM */}
             <div class="observe-vertical">
               <div class="vertical-badge apm">Replaces Datadog + SigNoz</div>
-              <h3 class="text-lg font-semibold text-white mb-2">APM & Tracing</h3>
-              <p class="text-zinc-400 text-[14px] mb-4">OpenTelemetry-native distributed tracing with automatic service maps.</p>
+              <h3 class="text-lg font-semibold text-zinc-900 dark:text-white mb-2">APM & Tracing</h3>
+              <p class="text-zinc-600 dark:text-zinc-400 text-[14px] mb-4">OpenTelemetry-native distributed tracing with automatic service maps.</p>
               <ul class="vertical-list">
                 <li>Distributed traces (OTLP compatible)</li>
                 <li>Service dependency maps</li>
@@ -222,8 +222,8 @@ export default function Observe() {
             {/* Errors */}
             <div class="observe-vertical">
               <div class="vertical-badge errors">Replaces Sentry</div>
-              <h3 class="text-lg font-semibold text-white mb-2">Error Tracking</h3>
-              <p class="text-zinc-400 text-[14px] mb-4">Crash reports with full context. Source maps, stack traces, breadcrumbs.</p>
+              <h3 class="text-lg font-semibold text-zinc-900 dark:text-white mb-2">Error Tracking</h3>
+              <p class="text-zinc-600 dark:text-zinc-400 text-[14px] mb-4">Crash reports with full context. Source maps, stack traces, breadcrumbs.</p>
               <ul class="vertical-list">
                 <li>Automatic error grouping</li>
                 <li>Stack traces with source maps</li>
@@ -238,8 +238,8 @@ export default function Observe() {
             {/* Unified */}
             <div class="observe-vertical unified">
               <div class="vertical-badge unified-badge">The whole point</div>
-              <h3 class="text-lg font-semibold text-white mb-2">Unified Dashboard</h3>
-              <p class="text-zinc-400 text-[14px] mb-4">The reason to use one tool instead of four. Everything is connected.</p>
+              <h3 class="text-lg font-semibold text-zinc-900 dark:text-white mb-2">Unified Dashboard</h3>
+              <p class="text-zinc-600 dark:text-zinc-400 text-[14px] mb-4">The reason to use one tool instead of four. Everything is connected.</p>
               <ul class="vertical-list">
                 <li>Click an error -- see the trace that caused it</li>
                 <li>Click a slow page -- see the API calls behind it</li>
@@ -256,8 +256,8 @@ export default function Observe() {
         {/* How it works */}
         <div class="mb-24">
           <div class="text-center mb-12">
-            <h2 class="text-2xl font-semibold text-white mb-4">One binary. Seriously.</h2>
-            <p class="text-zinc-400 text-[14px] max-w-lg mx-auto">
+            <h2 class="text-2xl font-semibold text-zinc-900 dark:text-white mb-4">One binary. Seriously.</h2>
+            <p class="text-zinc-600 dark:text-zinc-400 text-[14px] max-w-lg mx-auto">
               Observe is a single Go binary backed by Nucleus, our multi-model database.
               Download, run, point your app at it.
             </p>
@@ -266,19 +266,19 @@ export default function Observe() {
           <div class="grid sm:grid-cols-3 gap-6">
             <div class="step-card">
               <div class="step-num">1</div>
-              <h4 class="text-white font-medium mb-2">Install</h4>
+              <h4 class="text-zinc-900 dark:text-white font-medium mb-2">Install</h4>
               <div class="step-code">curl -sL https://raw.githubusercontent.com/useteploy/teploy-observe/main/scripts/install.sh | sh</div>
               <p class="text-zinc-500 text-[13px] mt-2">Single binary. No Docker, no Kubernetes, no config files.</p>
             </div>
             <div class="step-card">
               <div class="step-num">2</div>
-              <h4 class="text-white font-medium mb-2">Add the tracker</h4>
+              <h4 class="text-zinc-900 dark:text-white font-medium mb-2">Add the tracker</h4>
               <div class="step-code">&lt;script src="observe.js" data-site="YOUR_ID"&gt;&lt;/script&gt;</div>
               <p class="text-zinc-500 text-[13px] mt-2">2KB script. Cookie-free. No consent banner needed.</p>
             </div>
             <div class="step-card">
               <div class="step-num">3</div>
-              <h4 class="text-white font-medium mb-2">See your data</h4>
+              <h4 class="text-zinc-900 dark:text-white font-medium mb-2">See your data</h4>
               <div class="step-code">open http://your-server:8080</div>
               <p class="text-zinc-500 text-[13px] mt-2">Dashboard is live. Real-time visitors, analytics, errors, traces.</p>
             </div>
@@ -288,7 +288,7 @@ export default function Observe() {
         {/* Comparison */}
         <div class="mb-24">
           <div class="text-center mb-12">
-            <h2 class="text-2xl font-semibold text-white mb-4">How Observe compares</h2>
+            <h2 class="text-2xl font-semibold text-zinc-900 dark:text-white mb-4">How Observe compares</h2>
           </div>
           <div class="overflow-x-auto">
             <table class="compare-table">
@@ -321,13 +321,13 @@ export default function Observe() {
 
         {/* CTA */}
         <div class="text-center mb-16">
-          <h2 class="text-2xl font-semibold text-white mb-4">Run it yourself</h2>
-          <p class="text-zinc-400 text-[15px] mb-6 max-w-lg mx-auto">One binary. Your server. No accounts, no event caps, no per-seat pricing.</p>
+          <h2 class="text-2xl font-semibold text-zinc-900 dark:text-white mb-4">Run it yourself</h2>
+          <p class="text-zinc-600 dark:text-zinc-400 text-[15px] mb-6 max-w-lg mx-auto">One binary. Your server. No accounts, no event caps, no per-seat pricing.</p>
           <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="https://github.com/useteploy/observe" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-white text-zinc-900 font-medium text-[14px] rounded-lg hover:bg-zinc-200 transition-colors">
               View on GitHub
             </a>
-            <a href="/docs/getting-started/introduction" class="text-zinc-400 hover:text-white text-[14px] font-medium transition-colors">
+            <a href="/docs/getting-started/introduction" class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white text-[14px] font-medium transition-colors">
               Read the docs &rarr;
             </a>
           </div>

@@ -11,13 +11,13 @@ export default function BlueprintHero() {
       <div class="relative flex-1 flex items-start sm:items-center justify-center px-4 sm:px-6 pt-16 sm:pt-14">
         <div class="max-w-3xl mx-auto text-center">
           {/* Status badge */}
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.06] mb-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-zinc-100/70 dark:bg-white/[0.03] border border-zinc-200/70 dark:border-white/[0.06] mb-6">
             <span class="w-1.5 h-1.5 rounded-full bg-green-500" />
-            <span class="text-[12px] text-zinc-400 font-medium">Free, open source</span>
+            <span class="text-[12px] text-zinc-600 dark:text-zinc-400 font-medium">Free, open source</span>
           </div>
 
           {/* Headline */}
-          <h1 class="text-[clamp(2.5rem,6vw,4rem)] font-semibold tracking-[-0.03em] text-white leading-[1.1] mb-4">
+          <h1 class="text-[clamp(2.5rem,6vw,4rem)] font-semibold tracking-[-0.03em] text-zinc-900 dark:text-white leading-[1.1] mb-4">
             <span class="flip-letter-container">
               <span class="flip-letter">
                 <span class="flip-letter-front">D</span>
@@ -28,7 +28,7 @@ export default function BlueprintHero() {
           </h1>
 
           {/* Subheadline */}
-          <p class="text-[17px] text-zinc-400 max-w-xl mx-auto mb-8 leading-relaxed">
+          <p class="text-[17px] text-zinc-600 dark:text-zinc-400 max-w-xl mx-auto mb-8 leading-relaxed">
             Free tools to deploy, monitor, and develop. Zero-downtime deploys via SSH,
             observability, and a terminal IDE. No lock-in, no hosted dependencies.
           </p>
@@ -41,7 +41,7 @@ export default function BlueprintHero() {
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
               </svg>
             </a>
-            <a href="#how" class="px-5 py-2.5 text-[14px] text-zinc-400 hover:text-white transition-colors">
+            <a href="#how" class="px-5 py-2.5 text-[14px] text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">
               See how it works
             </a>
           </div>
@@ -64,11 +64,11 @@ export default function BlueprintHero() {
           <div class="flex items-center justify-center gap-8 opacity-40">
             <span class="text-[12px] text-zinc-500 uppercase tracking-wider">Works with</span>
             <div class="flex items-center gap-6">
-              <span class="text-[13px] text-zinc-400 font-medium">Vultr</span>
-              <span class="text-[13px] text-zinc-400 font-medium">Hetzner</span>
-              <span class="text-[13px] text-zinc-400 font-medium">DigitalOcean</span>
-              <span class="text-[13px] text-zinc-400 font-medium hidden sm:block">Linode</span>
-              <span class="text-[13px] text-zinc-400 font-medium hidden sm:block">OVH</span>
+              <span class="text-[13px] text-zinc-600 dark:text-zinc-400 font-medium">Vultr</span>
+              <span class="text-[13px] text-zinc-600 dark:text-zinc-400 font-medium">Hetzner</span>
+              <span class="text-[13px] text-zinc-600 dark:text-zinc-400 font-medium">DigitalOcean</span>
+              <span class="text-[13px] text-zinc-600 dark:text-zinc-400 font-medium hidden sm:block">Linode</span>
+              <span class="text-[13px] text-zinc-600 dark:text-zinc-400 font-medium hidden sm:block">OVH</span>
             </div>
           </div>
         </div>
@@ -84,18 +84,18 @@ function ProductCard({ href, icon, color, label, sub }: {
     indigo: { bg: "bg-indigo-500/10", text: "text-indigo-400", hover: "hover:border-indigo-500/30 hover:bg-indigo-500/[0.04]" },
     sky:    { bg: "bg-sky-500/10", text: "text-sky-400", hover: "hover:border-sky-500/30 hover:bg-sky-500/[0.04]" },
     violet: { bg: "bg-violet-500/10", text: "text-violet-400", hover: "hover:border-violet-500/30 hover:bg-violet-500/[0.04]" },
-    zinc:   { bg: "bg-white/[0.06]", text: "text-zinc-400", hover: "hover:border-zinc-500/30 hover:bg-white/[0.03]" },
+    zinc:   { bg: "bg-zinc-200/70 dark:bg-white/[0.06]", text: "text-zinc-600 dark:text-zinc-400", hover: "hover:border-zinc-500/30 hover:bg-zinc-100/70 dark:hover:bg-white/[0.03]" },
   };
   const c = colorMap[color] || colorMap.zinc;
 
   return (
-    <a href={href} class={`group text-center p-2.5 rounded-xl bg-white/[0.02] border border-white/[0.06] ${c.hover} transition-all`}>
+    <a href={href} class={`group text-center p-2.5 rounded-xl bg-zinc-100/60 dark:bg-white/[0.02] border border-zinc-200/70 dark:border-white/[0.06] ${c.hover} transition-all`}>
       <div class={`w-7 h-7 rounded-lg ${c.bg} flex items-center justify-center mx-auto mb-1.5`}>
         <svg class={`w-3.5 h-3.5 ${c.text}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={icon} />
         </svg>
       </div>
-      <div class="text-[12px] text-white font-medium">{label}</div>
+      <div class="text-[12px] text-zinc-900 dark:text-white font-medium">{label}</div>
       <div class="text-[10px] text-zinc-500">{sub}</div>
     </a>
   );

@@ -6,10 +6,10 @@ export default function CTA() {
       </div>
 
       <div class="max-w-2xl mx-auto px-6 text-center relative">
-        <h2 class="text-3xl sm:text-4xl font-semibold text-white tracking-tight mb-4">
+        <h2 class="text-3xl sm:text-4xl font-semibold text-zinc-900 dark:text-white tracking-tight mb-4">
           Free. Open source. Yours.
         </h2>
-        <p class="text-[16px] text-zinc-400 mb-8 max-w-md mx-auto">
+        <p class="text-[16px] text-zinc-600 dark:text-zinc-400 mb-8 max-w-md mx-auto">
           Deploy, monitor, and develop with tools you own. No lock-in, no subscriptions required.
         </p>
 
@@ -20,7 +20,7 @@ export default function CTA() {
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
             </svg>
           </a>
-          <a href="/docs" class="px-6 py-2.5 text-[14px] text-zinc-400 hover:text-white transition-colors">
+          <a href="/docs" class="px-6 py-2.5 text-[14px] text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">
             Read the docs
           </a>
         </div>

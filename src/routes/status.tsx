@@ -50,10 +50,10 @@ export default function Status() {
         {/* Header */}
         <div class="mb-12">
           <p class="text-zinc-500 text-[13px] font-medium uppercase tracking-wider mb-4">System Status</p>
-          <h1 class="text-4xl sm:text-5xl font-semibold text-white tracking-tight mb-6">
+          <h1 class="text-4xl sm:text-5xl font-semibold text-zinc-900 dark:text-white tracking-tight mb-6">
             All Systems Operational
           </h1>
-          <p class="text-zinc-400 text-[16px] leading-relaxed">
+          <p class="text-zinc-600 dark:text-zinc-400 text-[16px] leading-relaxed">
             Current status of Teploy services. Updated in real-time.
           </p>
         </div>
@@ -71,13 +71,13 @@ export default function Status() {
 
         {/* Services */}
         <div class="mb-16">
-          <h2 class="text-xl font-semibold text-white mb-6">Services</h2>
+          <h2 class="text-xl font-semibold text-zinc-900 dark:text-white mb-6">Services</h2>
           <div class="space-y-3">
             {services.map((service) => (
-              <div class="flex items-center justify-between p-4 rounded-lg border border-white/[0.06] bg-white/[0.02]">
+              <div class="flex items-center justify-between p-4 rounded-lg border border-zinc-200/70 dark:border-white/[0.06] bg-zinc-100/60 dark:bg-white/[0.02]">
                 <div class="flex items-center gap-3">
                   <div class={`w-2.5 h-2.5 rounded-full ${getStatusColor(service.status)}`}></div>
-                  <span class="text-white text-[14px] font-medium">{service.name}</span>
+                  <span class="text-zinc-900 dark:text-white text-[14px] font-medium">{service.name}</span>
                 </div>
                 <div class="flex items-center gap-4">
                   <span class="text-zinc-500 text-[13px]">{service.uptime} uptime</span>
@@ -90,8 +90,8 @@ export default function Status() {
 
         {/* Uptime Chart Placeholder */}
         <div class="mb-16">
-          <h2 class="text-xl font-semibold text-white mb-6">90-Day Uptime</h2>
-          <div class="p-6 rounded-xl border border-white/[0.06] bg-white/[0.02]">
+          <h2 class="text-xl font-semibold text-zinc-900 dark:text-white mb-6">90-Day Uptime</h2>
+          <div class="p-6 rounded-xl border border-zinc-200/70 dark:border-white/[0.06] bg-zinc-100/60 dark:bg-white/[0.02]">
             <div class="flex items-end gap-1 h-16">
               {Array.from({ length: 90 }, (_, i) => (
                 <div
@@ -105,20 +105,20 @@ export default function Status() {
               <span>90 days ago</span>
               <span>Today</span>
             </div>
-            <div class="mt-4 pt-4 border-t border-white/[0.06] flex items-center justify-between">
+            <div class="mt-4 pt-4 border-t border-zinc-200/70 dark:border-white/[0.06] flex items-center justify-between">
               <span class="text-zinc-500 text-[14px]">Overall uptime</span>
-              <span class="text-white font-semibold">99.97%</span>
+              <span class="text-zinc-900 dark:text-white font-semibold">99.97%</span>
             </div>
           </div>
         </div>
 
         {/* Recent Incidents */}
         <div class="mb-16">
-          <h2 class="text-xl font-semibold text-white mb-6">Recent Incidents</h2>
+          <h2 class="text-xl font-semibold text-zinc-900 dark:text-white mb-6">Recent Incidents</h2>
           {incidents.length > 0 ? (
             <div class="space-y-4">
               {incidents.map((incident) => (
-                <div class="p-6 rounded-xl border border-white/[0.06] bg-white/[0.02]">
+                <div class="p-6 rounded-xl border border-zinc-200/70 dark:border-white/[0.06] bg-zinc-100/60 dark:bg-white/[0.02]">
                   <div class="flex items-center justify-between mb-3">
                     <div class="flex items-center gap-3">
                       <span class="px-2.5 py-1 bg-emerald-500/10 text-emerald-400 text-[11px] font-medium uppercase tracking-wider rounded-full">
@@ -128,21 +128,21 @@ export default function Status() {
                     </div>
                     <span class="text-zinc-600 text-[13px]">Duration: {incident.duration}</span>
                   </div>
-                  <h3 class="text-white font-medium text-[15px] mb-2">{incident.title}</h3>
+                  <h3 class="text-zinc-900 dark:text-white font-medium text-[15px] mb-2">{incident.title}</h3>
                   <p class="text-zinc-500 text-[14px]">{incident.description}</p>
                 </div>
               ))}
             </div>
           ) : (
-            <div class="p-6 rounded-xl border border-white/[0.06] bg-white/[0.02] text-center">
+            <div class="p-6 rounded-xl border border-zinc-200/70 dark:border-white/[0.06] bg-zinc-100/60 dark:bg-white/[0.02] text-center">
               <p class="text-zinc-500 text-[14px]">No recent incidents</p>
             </div>
           )}
         </div>
 
         {/* Subscribe */}
-        <div class="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-8 text-center">
-          <h2 class="text-xl font-semibold text-white mb-3">Get Status Updates</h2>
+        <div class="rounded-2xl border border-zinc-200/70 dark:border-white/[0.06] bg-zinc-100/60 dark:bg-white/[0.02] p-8 text-center">
+          <h2 class="text-xl font-semibold text-zinc-900 dark:text-white mb-3">Get Status Updates</h2>
           <p class="text-zinc-500 text-[14px] mb-6 max-w-md mx-auto">
             Subscribe to receive notifications about scheduled maintenance and service disruptions.
           </p>
@@ -151,7 +151,7 @@ export default function Status() {
               type="email"
               placeholder="you@company.com"
               required
-              class="flex-1 px-4 py-3 bg-white/[0.04] border border-white/[0.08] rounded-lg text-white text-[14px] placeholder-zinc-600 focus:outline-none focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/50 transition-colors"
+              class="flex-1 px-4 py-3 bg-zinc-100 dark:bg-white/[0.04] border border-zinc-200 dark:border-white/[0.08] rounded-lg text-zinc-900 dark:text-white text-[14px] placeholder-zinc-600 focus:outline-none focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/50 transition-colors"
             />
             <button
               type="submit"

@@ -11,7 +11,7 @@ export default function HowItWorks() {
       <div class="max-w-2xl mx-auto px-6">
         <div class="text-center mb-12 animate-fade-in-up">
           <p class="text-[11px] text-zinc-500 uppercase tracking-widest mb-3">How it works</p>
-          <h2 class="text-2xl font-semibold text-white tracking-tight">
+          <h2 class="text-2xl font-semibold text-zinc-900 dark:text-white tracking-tight">
             Four steps to production
           </h2>
         </div>
@@ -20,7 +20,7 @@ export default function HowItWorks() {
           {steps.map((step) => (
             <div class="text-center">
               <div class="text-[32px] font-light text-zinc-700 mb-2">{step.number}</div>
-              <h3 class="text-[13px] font-medium text-white mb-1">{step.title}</h3>
+              <h3 class="text-[13px] font-medium text-zinc-900 dark:text-white mb-1">{step.title}</h3>
               <p class="text-[11px] text-zinc-500 leading-relaxed">{step.description}</p>
             </div>
           ))}

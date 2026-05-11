@@ -11,57 +11,57 @@ export default function Pricing() {
 
         {/* Header */}
         <div class="text-center mb-16">
-          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white tracking-tight mb-4">
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-zinc-900 dark:text-white tracking-tight mb-4">
             Free. Self-host. No catch.
           </h1>
-          <p class="text-zinc-400 text-lg max-w-xl mx-auto">
+          <p class="text-zinc-600 dark:text-zinc-400 text-lg max-w-xl mx-auto">
             Every Teploy tool is free and open source. Run them on your own servers. No accounts, no usage limits, no upsell.
           </p>
         </div>
 
         {/* Free section */}
         <div class="mb-16">
-          <div class="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-8 sm:p-10">
+          <div class="rounded-2xl border border-zinc-200/70 dark:border-white/[0.06] bg-zinc-100/60 dark:bg-white/[0.02] p-8 sm:p-10">
             <div class="flex items-baseline justify-between mb-6">
               <div>
-                <h2 class="text-2xl font-semibold text-white">Free, forever</h2>
-                <p class="text-zinc-400 text-[14px] mt-1">No credit card, no limits, no catch</p>
+                <h2 class="text-2xl font-semibold text-zinc-900 dark:text-white">Free, forever</h2>
+                <p class="text-zinc-600 dark:text-zinc-400 text-[14px] mt-1">No credit card, no limits, no catch</p>
               </div>
-              <span class="text-3xl font-bold text-white">$0</span>
+              <span class="text-3xl font-bold text-zinc-900 dark:text-white">$0</span>
             </div>
             <div class="grid sm:grid-cols-2 gap-3">
               <div class="free-item">
                 <svg class="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
                 <div>
-                  <span class="text-white text-[14px] font-medium">teploy CLI</span>
+                  <span class="text-zinc-900 dark:text-white text-[14px] font-medium">teploy CLI</span>
                   <span class="text-zinc-500 text-[13px]"> — unlimited deploys to any server</span>
                 </div>
               </div>
               <div class="free-item">
                 <svg class="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
                 <div>
-                  <span class="text-white text-[14px] font-medium">teploy Dash</span>
+                  <span class="text-zinc-900 dark:text-white text-[14px] font-medium">teploy Dash</span>
                   <span class="text-zinc-500 text-[13px]"> — web UI + uptime monitoring</span>
                 </div>
               </div>
               <div class="free-item">
                 <svg class="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
                 <div>
-                  <span class="text-white text-[14px] font-medium">teploy Observe</span>
+                  <span class="text-zinc-900 dark:text-white text-[14px] font-medium">teploy Observe</span>
                   <span class="text-zinc-500 text-[13px]"> — analytics, APM, error tracking</span>
                 </div>
               </div>
               <div class="free-item">
                 <svg class="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
                 <div>
-                  <span class="text-white text-[14px] font-medium">trmnl</span>
+                  <span class="text-zinc-900 dark:text-white text-[14px] font-medium">trmnl</span>
                   <span class="text-zinc-500 text-[13px]"> — terminal IDE config bundle</span>
                 </div>
               </div>
               <div class="free-item sm:col-span-2">
                 <svg class="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
                 <div>
-                  <span class="text-white text-[14px] font-medium">Open source</span>
+                  <span class="text-zinc-900 dark:text-white text-[14px] font-medium">Open source</span>
                   <span class="text-zinc-500 text-[13px]"> — self-host everything, no lock-in, no telemetry phoning home</span>
                 </div>
               </div>
@@ -70,16 +70,16 @@ export default function Pricing() {
         </div>
 
         {/* Why free */}
-        <div class="mb-16 rounded-xl border border-white/[0.06] bg-white/[0.02] p-8">
-          <h3 class="text-lg font-semibold text-white mb-3">Why is it free?</h3>
-          <p class="text-zinc-400 text-[14px] leading-relaxed">
+        <div class="mb-16 rounded-xl border border-zinc-200/70 dark:border-white/[0.06] bg-zinc-100/60 dark:bg-white/[0.02] p-8">
+          <h3 class="text-lg font-semibold text-zinc-900 dark:text-white mb-3">Why is it free?</h3>
+          <p class="text-zinc-600 dark:text-zinc-400 text-[14px] leading-relaxed">
             Teploy is a solo project that exists to remove the toll booths on self-hosting. Deploys, observability, and a terminal setup are tools — not subscriptions. The tools stay free and open source. If a paid managed offering ever ships, it'll be a separate add-on, not a gate around what's here today.
           </p>
         </div>
 
         {/* FAQ */}
         <div>
-          <h2 class="text-xl font-semibold text-white mb-8">Common questions</h2>
+          <h2 class="text-xl font-semibold text-zinc-900 dark:text-white mb-8">Common questions</h2>
           <div class="space-y-6">
             <div class="faq">
               <h3>What does it cost to run?</h3>

@@ -48,19 +48,19 @@ export default function Dash() {
             <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>
             Free, open source
           </div>
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white tracking-tight mb-6">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold text-zinc-900 dark:text-white tracking-tight mb-6">
             A web UI that<br class="hidden sm:block" /> never desyncs
           </h1>
-          <p class="text-zinc-400 text-lg leading-relaxed max-w-2xl mx-auto mb-10">
+          <p class="text-zinc-600 dark:text-zinc-400 text-lg leading-relaxed max-w-2xl mx-auto mb-10">
             Embedded in the CLI for quick access, or run it standalone on your server for 24/7 monitoring.
             Reads the same state files the CLI writes — the dashboard is never out of date.
           </p>
           <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <div class="px-6 py-3 bg-zinc-800 border border-zinc-700 rounded-lg font-mono text-[14px] text-zinc-300">
+            <div class="px-6 py-3 bg-zinc-100 dark:bg-zinc-800 border border-zinc-700 rounded-lg font-mono text-[14px] text-zinc-700 dark:text-zinc-300">
               teploy ui
             </div>
             <span class="text-zinc-600 text-[13px]">or</span>
-            <div class="px-6 py-3 bg-zinc-800 border border-zinc-700 rounded-lg font-mono text-[14px] text-zinc-300">
+            <div class="px-6 py-3 bg-zinc-100 dark:bg-zinc-800 border border-zinc-700 rounded-lg font-mono text-[14px] text-zinc-700 dark:text-zinc-300">
               teploy ui --serve
             </div>
           </div>
@@ -68,12 +68,12 @@ export default function Dash() {
         </div>
 
         {/* Terminal preview */}
-        <div class="mb-24 rounded-2xl border border-white/[0.08] bg-gradient-to-b from-zinc-900 to-zinc-950 overflow-hidden shadow-2xl">
-          <div class="flex items-center gap-2 px-4 py-3 bg-zinc-900 border-b border-white/[0.06]">
+        <div class="mb-24 rounded-2xl border border-zinc-200 dark:border-white/[0.08] bg-gradient-to-b from-zinc-900 to-zinc-950 overflow-hidden shadow-2xl">
+          <div class="flex items-center gap-2 px-4 py-3 bg-white dark:bg-zinc-900 border-b border-zinc-200/70 dark:border-white/[0.06]">
             <div class="flex items-center gap-1.5">
-              <div class="w-3 h-3 rounded-full bg-zinc-700"></div>
-              <div class="w-3 h-3 rounded-full bg-zinc-700"></div>
-              <div class="w-3 h-3 rounded-full bg-zinc-700"></div>
+              <div class="w-3 h-3 rounded-full bg-zinc-200 dark:bg-zinc-700"></div>
+              <div class="w-3 h-3 rounded-full bg-zinc-200 dark:bg-zinc-700"></div>
+              <div class="w-3 h-3 rounded-full bg-zinc-200 dark:bg-zinc-700"></div>
             </div>
             <div class="flex-1 flex justify-center">
               <span class="text-[11px] text-zinc-500 font-mono">teploy ui</span>
@@ -94,21 +94,21 @@ export default function Dash() {
 
         {/* Two modes */}
         <div class="mb-24">
-          <h2 class="text-2xl sm:text-3xl font-semibold text-white text-center mb-4">Two modes, one tool</h2>
-          <p class="text-zinc-400 text-center text-[16px] max-w-xl mx-auto mb-12">
+          <h2 class="text-2xl sm:text-3xl font-semibold text-zinc-900 dark:text-white text-center mb-4">Two modes, one tool</h2>
+          <p class="text-zinc-600 dark:text-zinc-400 text-center text-[16px] max-w-xl mx-auto mb-12">
             Run it locally when you need a quick look, or deploy it standalone for always-on visibility.
           </p>
 
           <div class="grid md:grid-cols-2 gap-6">
             {/* Embedded */}
-            <div class="p-6 rounded-xl border border-white/[0.06] bg-white/[0.02]">
+            <div class="p-6 rounded-xl border border-zinc-200/70 dark:border-white/[0.06] bg-zinc-100/60 dark:bg-white/[0.02]">
               <div class="w-10 h-10 rounded-lg bg-sky-500/10 flex items-center justify-center mb-4">
                 <svg class="w-5 h-5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 17l6-6-6-6M12 19h8" />
                 </svg>
               </div>
-              <h3 class="text-white font-semibold mb-2">Embedded</h3>
-              <p class="text-zinc-400 text-[14px] mb-3">Bundled into the CLI binary. Run <span class="font-mono text-zinc-300 text-[13px]">teploy ui</span> from your terminal to launch a local dashboard against your current config. No install, no setup.</p>
+              <h3 class="text-zinc-900 dark:text-white font-semibold mb-2">Embedded</h3>
+              <p class="text-zinc-600 dark:text-zinc-400 text-[14px] mb-3">Bundled into the CLI binary. Run <span class="font-mono text-zinc-700 dark:text-zinc-300 text-[13px]">teploy ui</span> from your terminal to launch a local dashboard against your current config. No install, no setup.</p>
               <div class="font-mono text-[12px] text-zinc-500 bg-black/20 rounded-md px-3 py-2">
                 teploy ui <span class="text-zinc-600"># opens localhost</span>
               </div>
@@ -121,8 +121,8 @@ export default function Dash() {
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </div>
-              <h3 class="text-white font-semibold mb-2">Standalone <span class="text-zinc-500 font-normal text-[13px]">— 24/7 monitoring</span></h3>
-              <p class="text-zinc-400 text-[14px] mb-3">Run the dashboard as a daemon on your server. Adds HTTP/TCP uptime checks, response-time history, and alerting on top of the embedded feature set.</p>
+              <h3 class="text-zinc-900 dark:text-white font-semibold mb-2">Standalone <span class="text-zinc-500 font-normal text-[13px]">— 24/7 monitoring</span></h3>
+              <p class="text-zinc-600 dark:text-zinc-400 text-[14px] mb-3">Run the dashboard as a daemon on your server. Adds HTTP/TCP uptime checks, response-time history, and alerting on top of the embedded feature set.</p>
               <div class="font-mono text-[12px] text-zinc-500 bg-black/20 rounded-md px-3 py-2">
                 teploy ui --serve <span class="text-zinc-600"># background daemon</span>
               </div>
@@ -131,27 +131,27 @@ export default function Dash() {
         </div>
 
         {/* No desync callout */}
-        <div class="mb-24 rounded-xl border border-white/[0.06] bg-white/[0.02] p-8">
-          <h3 class="text-lg font-semibold text-white mb-3">One source of truth</h3>
-          <p class="text-zinc-400 text-[14px] leading-relaxed max-w-2xl">
+        <div class="mb-24 rounded-xl border border-zinc-200/70 dark:border-white/[0.06] bg-zinc-100/60 dark:bg-white/[0.02] p-8">
+          <h3 class="text-lg font-semibold text-zinc-900 dark:text-white mb-3">One source of truth</h3>
+          <p class="text-zinc-600 dark:text-zinc-400 text-[14px] leading-relaxed max-w-2xl">
             Dokploy and Coolify maintain a separate database of what's deployed. Change anything via SSH and the UI is wrong. Dash doesn't have its own database. It reads the state files the CLI writes on your server. Deploy from CLI, UI, or a webhook — the view is always current.
           </p>
         </div>
 
         {/* Features */}
         <div class="mb-16">
-          <h2 class="text-2xl sm:text-3xl font-semibold text-white mb-4">What's inside</h2>
-          <p class="text-zinc-400 text-[16px] max-w-lg mb-8">A practical operations dashboard. No telemetry pipeline to set up, no agents to install.</p>
+          <h2 class="text-2xl sm:text-3xl font-semibold text-zinc-900 dark:text-white mb-4">What's inside</h2>
+          <p class="text-zinc-600 dark:text-zinc-400 text-[16px] max-w-lg mb-8">A practical operations dashboard. No telemetry pipeline to set up, no agents to install.</p>
         </div>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-24">
           {features.map((feature) => (
-            <div class="group p-5 rounded-xl bg-white/[0.02] border border-white/[0.06] hover:bg-white/[0.03] hover:border-sky-500/20 transition-all">
+            <div class="group p-5 rounded-xl bg-zinc-100/60 dark:bg-white/[0.02] border border-zinc-200/70 dark:border-white/[0.06] hover:bg-zinc-100/70 dark:hover:bg-white/[0.03] hover:border-sky-500/20 transition-all">
               <div class="w-8 h-8 rounded-lg bg-sky-500/10 flex items-center justify-center mb-3">
                 <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={feature.icon} />
                 </svg>
               </div>
-              <h3 class="text-[15px] font-medium text-white mb-1.5">{feature.title}</h3>
+              <h3 class="text-[15px] font-medium text-zinc-900 dark:text-white mb-1.5">{feature.title}</h3>
               <p class="text-[13px] text-zinc-500 leading-relaxed">{feature.description}</p>
             </div>
           ))}
@@ -159,13 +159,13 @@ export default function Dash() {
 
         {/* CTA */}
         <div class="text-center">
-          <h2 class="text-2xl font-semibold text-white mb-4">Already have the CLI?</h2>
-          <p class="text-zinc-400 text-[15px] mb-6">Dash ships in the same binary. Run <span class="font-mono text-zinc-300">teploy ui</span> and you're in.</p>
+          <h2 class="text-2xl font-semibold text-zinc-900 dark:text-white mb-4">Already have the CLI?</h2>
+          <p class="text-zinc-600 dark:text-zinc-400 text-[15px] mb-6">Dash ships in the same binary. Run <span class="font-mono text-zinc-700 dark:text-zinc-300">teploy ui</span> and you're in.</p>
           <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="/cli" class="px-6 py-3 bg-white text-zinc-900 font-medium text-[14px] rounded-lg hover:bg-zinc-200 transition-colors">
               Install the CLI
             </a>
-            <a href="/docs" class="text-zinc-400 hover:text-white text-[14px] font-medium transition-colors">
+            <a href="/docs" class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white text-[14px] font-medium transition-colors">
               Read the docs &rarr;
             </a>
           </div>

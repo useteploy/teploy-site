@@ -15,37 +15,37 @@ export default function Cli() {
             <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
             Free, open source
           </div>
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white tracking-tight mb-6">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold text-zinc-900 dark:text-white tracking-tight mb-6">
             Deploy to any server,<br class="hidden sm:block" /> zero downtime
           </h1>
-          <p class="text-zinc-400 text-lg leading-relaxed max-w-2xl mx-auto mb-10">
+          <p class="text-zinc-600 dark:text-zinc-400 text-lg leading-relaxed max-w-2xl mx-auto mb-10">
             A single Go binary. SSH into any server. Three lines of config. Zero-downtime deploys
             with automatic rollback. No management server, no dependencies.
           </p>
           <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <div class="px-6 py-3 bg-zinc-800 border border-zinc-700 rounded-lg font-mono text-[14px] text-zinc-300">
+            <div class="px-6 py-3 bg-zinc-100 dark:bg-zinc-800 border border-zinc-700 rounded-lg font-mono text-[14px] text-zinc-700 dark:text-zinc-300">
               brew install useteploy/tap/teploy
             </div>
-            <a href="/docs/getting-started/quick-start" class="text-zinc-400 hover:text-white text-[14px] font-medium transition-colors">
+            <a href="/docs/getting-started/quick-start" class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white text-[14px] font-medium transition-colors">
               Quick start &rarr;
             </a>
           </div>
         </div>
 
         {/* Terminal Demo */}
-        <div class="mb-24 rounded-2xl border border-white/[0.08] bg-gradient-to-b from-zinc-900 to-zinc-950 overflow-hidden shadow-2xl">
-          <div class="flex items-center gap-2 px-4 py-3 bg-zinc-900 border-b border-white/[0.06]">
+        <div class="mb-24 rounded-2xl border border-zinc-200 dark:border-white/[0.08] bg-gradient-to-b from-zinc-900 to-zinc-950 overflow-hidden shadow-2xl">
+          <div class="flex items-center gap-2 px-4 py-3 bg-white dark:bg-zinc-900 border-b border-zinc-200/70 dark:border-white/[0.06]">
             <div class="flex items-center gap-1.5">
-              <div class="w-3 h-3 rounded-full bg-zinc-700"></div>
-              <div class="w-3 h-3 rounded-full bg-zinc-700"></div>
-              <div class="w-3 h-3 rounded-full bg-zinc-700"></div>
+              <div class="w-3 h-3 rounded-full bg-zinc-200 dark:bg-zinc-700"></div>
+              <div class="w-3 h-3 rounded-full bg-zinc-200 dark:bg-zinc-700"></div>
+              <div class="w-3 h-3 rounded-full bg-zinc-200 dark:bg-zinc-700"></div>
             </div>
           </div>
           <div class="p-6 font-mono text-[13px] leading-relaxed">
             <p class="text-zinc-500">$ cat teploy.yml</p>
-            <p class="text-zinc-300 mt-1">app: myapp</p>
-            <p class="text-zinc-300">domain: myapp.com</p>
-            <p class="text-zinc-300">server: 1.2.3.4</p>
+            <p class="text-zinc-700 dark:text-zinc-300 mt-1">app: myapp</p>
+            <p class="text-zinc-700 dark:text-zinc-300">domain: myapp.com</p>
+            <p class="text-zinc-700 dark:text-zinc-300">server: 1.2.3.4</p>
             <p class="text-zinc-500 mt-4">$ teploy deploy</p>
             <p class="text-indigo-400 mt-1">Building from Dockerfile...</p>
             <p class="text-indigo-400">Starting new container on port 3001</p>
@@ -57,15 +57,15 @@ export default function Cli() {
         </div>
 
         {/* Pairs with Dash */}
-        <div class="mb-24 rounded-xl border border-white/[0.06] bg-white/[0.02] p-8">
+        <div class="mb-24 rounded-xl border border-zinc-200/70 dark:border-white/[0.06] bg-zinc-100/60 dark:bg-white/[0.02] p-8">
           <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div>
-              <h3 class="text-lg font-semibold text-white mb-2">Want a web UI?</h3>
-              <p class="text-zinc-400 text-[14px] leading-relaxed max-w-xl">
-                Run <span class="font-mono text-zinc-300 text-[13px]">teploy ui</span> for a local dashboard, or deploy <a href="/dash" class="text-sky-400 hover:text-sky-300 underline underline-offset-2">teploy Dash</a> standalone for 24/7 monitoring with HTTP/TCP health checks. Same binary, same state files — no desync.
+              <h3 class="text-lg font-semibold text-zinc-900 dark:text-white mb-2">Want a web UI?</h3>
+              <p class="text-zinc-600 dark:text-zinc-400 text-[14px] leading-relaxed max-w-xl">
+                Run <span class="font-mono text-zinc-700 dark:text-zinc-300 text-[13px]">teploy ui</span> for a local dashboard, or deploy <a href="/dash" class="text-sky-400 hover:text-sky-300 underline underline-offset-2">teploy Dash</a> standalone for 24/7 monitoring with HTTP/TCP health checks. Same binary, same state files — no desync.
               </p>
             </div>
-            <a href="/dash" class="shrink-0 px-4 py-2 bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.06] hover:border-white/[0.12] text-white text-[14px] font-medium rounded-lg transition-colors">
+            <a href="/dash" class="shrink-0 px-4 py-2 bg-zinc-100 dark:bg-white/[0.04] hover:bg-zinc-200 dark:hover:bg-white/[0.08] border border-zinc-200/70 dark:border-white/[0.06] hover:border-white/[0.12] text-zinc-900 dark:text-white text-[14px] font-medium rounded-lg transition-colors">
               Dash &rarr;
             </a>
           </div>
@@ -73,7 +73,7 @@ export default function Cli() {
 
         {/* Features Grid */}
         <div class="mb-24">
-          <h2 class="text-2xl font-semibold text-white mb-8">Everything you need to ship</h2>
+          <h2 class="text-2xl font-semibold text-zinc-900 dark:text-white mb-8">Everything you need to ship</h2>
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             <div class="feat-card"><h4>Zero-downtime deploys</h4><p>New container starts, health checks pass, traffic routes, old container stops. Automatic rollback on failure.</p></div>
             <div class="feat-card"><h4>Automatic HTTPS</h4><p>Caddy provisions and renews TLS certificates automatically for every domain.</p></div>
@@ -89,7 +89,7 @@ export default function Cli() {
 
         {/* Comparison */}
         <div class="mb-16">
-          <h2 class="text-2xl font-semibold text-white text-center mb-8">How teploy compares</h2>
+          <h2 class="text-2xl font-semibold text-zinc-900 dark:text-white text-center mb-8">How teploy compares</h2>
           <div class="overflow-x-auto">
             <table class="compare-table">
               <thead>
