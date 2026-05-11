@@ -157,25 +157,12 @@
   color: #09090b !important;
 }
 
-:root[data-theme='light'] .text-zinc-300 {
-  color: #3f3f46 !important;
-}
+/* Removed: a previous override here inverted Tailwind's zinc scale in
+   light mode (text-zinc-700 -> #d4d4d8), making body text look pale on
+   white. The zinc-* utilities already render correctly in both themes
+   thanks to the dark: pairing on every element — no override needed.
 
-:root[data-theme='light'] .text-zinc-400 {
-  color: #52525b !important;
-}
-
-:root[data-theme='light'] .text-zinc-500 {
-  color: #71717a !important;
-}
-
-:root[data-theme='light'] .text-zinc-600 {
-  color: #a1a1aa !important;
-}
-
-:root[data-theme='light'] .text-zinc-700 {
-  color: #d4d4d8 !important;
-}
+   See git history for the dropped block if you ever want to revisit. */
 
 :root[data-theme='light'] .text-emerald-400 {
   color: #059669 !important;
