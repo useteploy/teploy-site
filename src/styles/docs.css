@@ -70,6 +70,8 @@ a {
   max-width: 1400px;
   margin: 0 auto;
   min-height: 100vh;
+  /* offset for the fixed h-14 (3.5rem) global Nav at the top */
+  padding-top: 3.5rem;
 }
 
 /* On doc detail pages, place .docs-main and .docs-toc-wrapper side-by-side.
@@ -83,8 +85,9 @@ a {
 /* Sidebar */
 .docs-sidebar {
   position: sticky;
-  top: 0;
-  height: 100vh;
+  /* sit just below the fixed Nav (h-14 = 3.5rem) */
+  top: 3.5rem;
+  height: calc(100vh - 3.5rem);
   overflow-y: auto;
   padding: 1.5rem 1rem;
   background: var(--nd-sidebar-bg);
@@ -222,8 +225,8 @@ a {
 /* TOC */
 .docs-toc {
   position: sticky;
-  top: 0;
-  height: 100vh;
+  top: 3.5rem;
+  height: calc(100vh - 3.5rem);
   overflow-y: auto;
   padding: 2.5rem 1rem 2.5rem 0;
   font-size: 0.875rem;

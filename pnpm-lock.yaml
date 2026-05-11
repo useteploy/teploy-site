@@ -6,7 +6,7 @@ settings:
 
 patchedDependencies:
   '@neutron-build/core':
-    hash: 30b6c73282e0b5ca9c9883467f7929c528345b4b690b606b544917a15413bc8f
+    hash: 5d767cb4cb63f817496198b9eb850881ef7c2162b86797e6e7908cbe5a439eb6
     path: patches/@neutron-build__core.patch
 
 importers:
@@ -18,7 +18,7 @@ importers:
         version: 0.0.1(jiti@1.21.7)(yaml@2.8.4)
       '@neutron-build/core':
         specifier: ^0.0.1
-        version: 0.0.1(patch_hash=30b6c73282e0b5ca9c9883467f7929c528345b4b690b606b544917a15413bc8f)
+        version: 0.0.1(patch_hash=5d767cb4cb63f817496198b9eb850881ef7c2162b86797e6e7908cbe5a439eb6)
       preact:
         specifier: ^10.25.4
         version: 10.29.1
@@ -1671,7 +1671,7 @@ snapshots:
 
   '@neutron-build/cli@0.0.1(jiti@1.21.7)(yaml@2.8.4)':
     dependencies:
-      '@neutron-build/core': 0.0.1(patch_hash=30b6c73282e0b5ca9c9883467f7929c528345b4b690b606b544917a15413bc8f)
+      '@neutron-build/core': 0.0.1(patch_hash=5d767cb4cb63f817496198b9eb850881ef7c2162b86797e6e7908cbe5a439eb6)
       preact: 10.29.1
       preact-render-to-string: 6.6.7(preact@10.29.1)
       vite: 6.4.2(jiti@1.21.7)(yaml@2.8.4)
@@ -1691,7 +1691,7 @@ snapshots:
       - tsx
       - yaml
 
-  '@neutron-build/core@0.0.1(patch_hash=30b6c73282e0b5ca9c9883467f7929c528345b4b690b606b544917a15413bc8f)':
+  '@neutron-build/core@0.0.1(patch_hash=5d767cb4cb63f817496198b9eb850881ef7c2162b86797e6e7908cbe5a439eb6)':
     dependencies:
       '@babel/parser': 7.29.3
       '@hono/node-server': 1.19.14(hono@4.12.18)

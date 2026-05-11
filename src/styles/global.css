@@ -71,6 +71,25 @@
     color: #ffffff;
   }
 
+  /* Built-on-Neutron footer link — matches Tebian site */
+  .built-on-link {
+    color: #b4befe;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s;
+    line-height: 1;
+  }
+  .built-on-link:hover {
+    color: #a6e3a1;
+  }
+  :root[data-theme='light'] .built-on-link {
+    color: #9ca0b0;
+  }
+  :root[data-theme='light'] .built-on-link:hover {
+    color: #8839ef;
+  }
+
   ::-webkit-scrollbar {
     width: 6px;
   }

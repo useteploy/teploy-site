@@ -1,7 +1,7 @@
 diff --git a/dist/client/island-runtime.js b/dist/client/island-runtime.js
 index 598a1e4c1733eb9da548ec3b5de4ced3ba83092e..9eab6292dc77c1eb52229106707ffb76293f2d2e 100644
 --- a/dist/client/island-runtime.js
-+++ b/dist/client/island-runtime.js	
++++ b/dist/client/island-runtime.js
 @@ -1,6 +1,6 @@
  // Neutron Island Runtime
  // Hydrates islands based on client directive
@@ -31,3 +31,18 @@ index 598a1e4c1733eb9da548ec3b5de4ced3ba83092e..9eab6292dc77c1eb52229106707ffb76
          island.__neutronHydrated = true;
      }
      catch (error) {
+diff --git a/dist/vite/island-plugin.js b/dist/vite/island-plugin.js
+index d1563aad273530d9f56211774713317fcaa72b32..736bd624b8d382649daeecf6e39210ad33153f96 100644
+--- a/dist/vite/island-plugin.js
++++ b/dist/vite/island-plugin.js
+@@ -11,7 +11,9 @@ export function islandPlugin() {
+         transform(code, id) {
+             if (id.includes("node_modules"))
+                 return null;
+-            if (!id.includes("/src/routes/"))
++            // Scan all user source — Islands can be wrapped inside any component
++            // (Nav, Footer, etc.), not just route files.
++            if (!id.includes("/src/"))
+                 return null;
+             // Find Island component usage
+             const islandPattern = /<Island\s+[^>]*component=\{(\w+)\}/g;

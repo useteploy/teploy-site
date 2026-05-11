@@ -56,9 +56,14 @@ export default function Footer() {
           <p class="text-zinc-600 text-[13px]">
             &copy; {new Date().getFullYear()} Teploy. All rights reserved.
           </p>
-          <p class="text-zinc-600 text-[13px]">
-            Built for developers, by developers.
-          </p>
+          <a
+            href="https://neutron.build"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="built-on-link"
+          >
+            neutron.
+          </a>
         </div>
       </div>
     </footer>
