@@ -1,7 +1,7 @@
 diff --git a/dist/client/island-runtime.js b/dist/client/island-runtime.js
 index 598a1e4c1733eb9da548ec3b5de4ced3ba83092e..9eab6292dc77c1eb52229106707ffb76293f2d2e 100644
 --- a/dist/client/island-runtime.js
-+++ b/dist/client/island-runtime.js
++++ b/dist/client/island-runtime.js	
 @@ -1,6 +1,6 @@
  // Neutron Island Runtime
  // Hydrates islands based on client directive
@@ -31,10 +31,85 @@ index 598a1e4c1733eb9da548ec3b5de4ced3ba83092e..9eab6292dc77c1eb52229106707ffb76
          island.__neutronHydrated = true;
      }
      catch (error) {
+diff --git a/dist/content/index.js b/dist/content/index.js
+index 3692cd70f3df0c9e6973c41d27f28a351e8db814..46fa3c7af7119beea4907424c2150b55814131fa 100644
+--- a/dist/content/index.js
++++ b/dist/content/index.js	
+@@ -71,7 +71,11 @@ export async function prepareContentCollections(options = {}) {
+     const writeManifest = options.writeManifest !== false;
+     const writeTypes = options.writeTypes !== false;
+     const manifestPath = options.manifestPath || path.join(rootDir, "dist", CONTENT_MANIFEST_DIST_NAME);
+-    const store = await loadCollectionStore(rootDir, { force: true });
++    const store = await loadCollectionStore(rootDir, {
++        force: true,
++        // eslint-disable-next-line @typescript-eslint/no-explicit-any
++        markdownConfig: options.markdownConfig ?? activeMarkdownConfig,
++    });
+     if (writeManifest) {
+         const serializableCollections = toSerializableCollections(store.collections);
+         await fsp.mkdir(path.dirname(manifestPath), { recursive: true });
+@@ -86,12 +90,26 @@ export async function prepareContentCollections(options = {}) {
+         await fsp.writeFile(typesPath, store.generatedTypes, "utf-8");
+     }
+ }
++// Module-level fallback for the markdown config. Set by the CLI during
++// build/dev startup so callers of getCollection (which don't receive a
++// markdownConfig as an argument) still pick up user-supplied marked
++// extensions, remark/rehype plugins, etc.
++let activeMarkdownConfig;
++export function setActiveMarkdownConfig(config) {
++    activeMarkdownConfig = config;
++    // Invalidate any cached stores so the new config takes effect.
++    cacheByRoot.clear();
++}
++export function getActiveMarkdownConfig() {
++    return activeMarkdownConfig;
++}
+ async function loadCollectionStore(rootDir, options = {}) {
+     const fingerprint = await computeContentFingerprint(rootDir);
+     const cached = cacheByRoot.get(rootDir);
+     if (!options.force && cached && cached.fingerprint === fingerprint) {
+         return cached.store;
+     }
++    const effectiveConfig = options.markdownConfig ?? activeMarkdownConfig;
+     const config = await loadContentConfig(rootDir);
+     if (!config) {
+         const manifestStore = await loadManifestStore(rootDir);
+@@ -114,7 +132,7 @@ async function loadCollectionStore(rootDir, options = {}) {
+     }
+     const collections = {};
+     for (const [collectionName, definition] of Object.entries(config)) {
+-        collections[collectionName] = await readCollectionEntries(rootDir, collectionName, definition, options.markdownConfig);
++        collections[collectionName] = await readCollectionEntries(rootDir, collectionName, definition, effectiveConfig);
+     }
+     const generatedTypes = generateCollectionTypes(config);
+     const store = {
+@@ -409,6 +427,21 @@ async function renderMarkup(source, sourceType, filePathForErrors, markdownConfi
+     if (markdownConfig?.syntaxHighlight !== false) {
+         const theme = (markdownConfig?.syntaxHighlight && markdownConfig.syntaxHighlight.theme) || "github-dark";
+         markedInstance.use(markedShikiExtension(theme));
++        // Shiki's renderer is async; marked silently calls async renderers in
++        // sync mode and stringifies the returned Promise as "[object Promise]"
++        // unless we flip global async mode on.
++        markedInstance.use({ async: true });
++    }
++    // Apply user-supplied marked extensions (KaTeX, directive, custom tokens).
++    // Each entry is forwarded directly to Marked.use(). Wired here so plain
++    // `.md` content gets the same plugin opportunity that MDX has via
++    // remark/rehype.
++    const extList = markdownConfig?.markedExtensions ?? activeMarkdownConfig?.markedExtensions;
++    if (extList?.length) {
++        for (const ext of extList) {
++            // eslint-disable-next-line @typescript-eslint/no-explicit-any
++            markedInstance.use(ext);
++        }
+     }
+     const html = await markedInstance.parse(source);
+     return { html: typeof html === "string" ? html : String(html) };
 diff --git a/dist/vite/island-plugin.js b/dist/vite/island-plugin.js
 index d1563aad273530d9f56211774713317fcaa72b32..736bd624b8d382649daeecf6e39210ad33153f96 100644
 --- a/dist/vite/island-plugin.js
-+++ b/dist/vite/island-plugin.js
++++ b/dist/vite/island-plugin.js	
 @@ -11,7 +11,9 @@ export function islandPlugin() {
          transform(code, id) {
              if (id.includes("node_modules"))
