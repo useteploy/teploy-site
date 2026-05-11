@@ -3,6 +3,7 @@ import { extractToc, calculateReadingTime } from "@neutron-build/core";
 import { Toc } from "../../components/docs/Toc";
 import { Footer as DocsFooter } from "../../components/docs/DocsFooter";
 import { Breadcrumbs } from "../../components/docs/Breadcrumbs";
+import { DocsShell, loadDocsEntries } from "../../components/docs/DocsShell";
 import { getPagination } from "../../lib/pagination";
 
 export const config = { mode: "static" };
@@ -30,6 +31,8 @@ export async function loader({ params }: { params: Record<string, string> }) {
     .map((d: any) => ({ slug: d.slug, data: d.data }));
   const pagination = getPagination(allEntries, slug);
 
+  const entries = await loadDocsEntries();
+
   return {
     title: entry.data.title,
     description: entry.data.description,
@@ -38,6 +41,7 @@ export async function loader({ params }: { params: Record<string, string> }) {
     toc,
     readingTime,
     pagination,
+    entries,
   };
 }
 
@@ -61,10 +65,11 @@ export default function DocPage({
       prev?: { title: string; slug: string };
       next?: { title: string; slug: string };
     };
+    entries: { slug: string; data: any }[];
   };
 }) {
   return (
-    <>
+    <DocsShell activeSlug={data.slug} entries={data.entries}>
       <div class="docs-main">
         <Breadcrumbs slug={data.slug} />
         <article class="prose">
@@ -79,6 +84,6 @@ export default function DocPage({
       <div class="docs-toc-wrapper">
         <Toc entries={data.toc} />
       </div>
-    </>
+    </DocsShell>
   );
 }

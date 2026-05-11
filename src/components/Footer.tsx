@@ -52,10 +52,7 @@ export default function Footer() {
           <LinkList title="Legal" links={footerLinks.legal} />
         </div>
 
-        <div class="mt-12 pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p class="text-zinc-600 text-[13px]">
-            &copy; {new Date().getFullYear()} Teploy. All rights reserved.
-          </p>
+        <div class="mt-12 pt-8 border-t border-white/[0.06] flex flex-col items-center gap-6">
           <a
             href="https://neutron.build"
             target="_blank"
@@ -64,6 +61,9 @@ export default function Footer() {
           >
             neutron.
           </a>
+          <p class="text-zinc-600 text-[13px]">
+            &copy; {new Date().getFullYear()} Teploy. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

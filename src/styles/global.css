@@ -87,7 +87,7 @@
     color: #9ca0b0;
   }
   :root[data-theme='light'] .built-on-link:hover {
-    color: #8839ef;
+    color: #40a02b; /* Catppuccin Latte green — keep the dark-theme hover spirit */
   }
 
   ::-webkit-scrollbar {

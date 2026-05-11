@@ -1,4 +1,5 @@
 import { getCollection } from "@neutron-build/core/content";
+import { DocsShell, loadDocsEntries } from "../../components/docs/DocsShell";
 
 export const config = { mode: "static" };
 
@@ -69,7 +70,8 @@ export async function loader() {
     return a.name.localeCompare(b.name);
   });
 
-  return { sections };
+  const entries = await loadDocsEntries();
+  return { sections, entries };
 }
 
 export function head() {
@@ -79,36 +81,42 @@ export function head() {
   };
 }
 
-export default function DocsIndex({ data }: { data: { sections: Section[] } }) {
+export default function DocsIndex({
+  data,
+}: {
+  data: { sections: Section[]; entries: { slug: string; data: any }[] };
+}) {
   return (
-    <div class="docs-index">
-      <header class="docs-index-header">
-        <h1>Documentation</h1>
-        <p>
-          Self-hosted deploy, observability, and developer tools — one binary each, free, MIT or
-          AGPL. Pick a section below or jump into the{" "}
-          <a href="/docs/getting-started/quick-start">quick start</a>.
-        </p>
-      </header>
+    <DocsShell activeSlug="index" entries={data.entries}>
+      <div class="docs-index">
+        <header class="docs-index-header">
+          <h1>Documentation</h1>
+          <p>
+            Self-hosted deploy, observability, and developer tools — one binary each, free, MIT or
+            AGPL. Pick a section below or jump into the{" "}
+            <a href="/docs/getting-started/quick-start">quick start</a>.
+          </p>
+        </header>
 
-      <div class="docs-index-grid">
-        {data.sections.map((section) => (
-          <section key={section.name} class="docs-index-section">
-            <h2>{section.label}</h2>
-            {section.description && <p class="docs-index-section-desc">{section.description}</p>}
-            <ul>
-              {section.pages.map((page) => (
-                <li key={page.slug}>
-                  <a href={`/docs/${page.slug}`}>{page.title}</a>
-                  {page.description && (
-                    <span class="docs-index-page-desc"> — {page.description}</span>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </section>
-        ))}
+        <div class="docs-index-grid">
+          {data.sections.map((section) => (
+            <section key={section.name} class="docs-index-section">
+              <h2>{section.label}</h2>
+              {section.description && <p class="docs-index-section-desc">{section.description}</p>}
+              <ul>
+                {section.pages.map((page) => (
+                  <li key={page.slug}>
+                    <a href={`/docs/${page.slug}`}>{page.title}</a>
+                    {page.description && (
+                      <span class="docs-index-page-desc"> — {page.description}</span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ))}
+        </div>
       </div>
-    </div>
+    </DocsShell>
   );
 }
