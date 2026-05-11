@@ -67,11 +67,12 @@ a {
 .docs-layout {
   display: grid;
   grid-template-columns: var(--nd-sidebar-width) minmax(0, 1fr);
-  max-width: 1400px;
-  margin: 0 auto;
+  /* Full-width: sidebar pinned to the left edge of the viewport, no
+     centered max-width container. Content column is centered visually
+     by the .docs-main rule (max-width: var(--nd-content-max); margin
+     auto). */
+  width: 100%;
   min-height: 100vh;
-  /* offset for the fixed h-14 (3.5rem) global Nav at the top */
-  padding-top: 3.5rem;
 }
 
 /* On doc detail pages, place .docs-main and .docs-toc-wrapper side-by-side.
@@ -85,11 +86,13 @@ a {
 /* Sidebar */
 .docs-sidebar {
   position: sticky;
-  /* sit just below the fixed Nav (h-14 = 3.5rem) */
-  top: 3.5rem;
-  height: calc(100vh - 3.5rem);
+  /* Touch the top of the page; the global Nav still floats over the
+     top 3.5rem but the sidebar starts at the very top with extra inner
+     padding-top to clear the Nav. */
+  top: 0;
+  height: 100vh;
   overflow-y: auto;
-  padding: 1.5rem 1rem;
+  padding: 4.5rem 1rem 1.5rem;
   background: var(--nd-sidebar-bg);
   border-right: 1px solid var(--nd-border);
   font-size: 0.875rem;
@@ -225,10 +228,10 @@ a {
 /* TOC */
 .docs-toc {
   position: sticky;
-  top: 3.5rem;
-  height: calc(100vh - 3.5rem);
+  top: 0;
+  height: 100vh;
   overflow-y: auto;
-  padding: 2.5rem 1rem 2.5rem 0;
+  padding: 4.5rem 1rem 2.5rem 0;
   font-size: 0.875rem;
   scrollbar-width: thin;
   scrollbar-color: var(--nd-border) transparent;
@@ -442,17 +445,17 @@ a {
   font-size: 1.75rem;
   font-weight: 600;
   letter-spacing: -0.02em;
-  color: var(--neutron-fg, #f4f4f5);
+  color: var(--nd-fg);
   margin: 0 0 0.5rem;
 }
 .docs-index-header p {
-  color: var(--neutron-fg-muted, #a1a1aa);
+  color: var(--nd-muted);
   font-size: 0.9375rem;
   line-height: 1.6;
   margin: 0;
 }
 .docs-index-header a {
-  color: var(--neutron-accent, #818cf8);
+  color: var(--nd-accent);
   text-decoration: none;
 }
 .docs-index-header a:hover { text-decoration: underline; }
@@ -473,12 +476,12 @@ a {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--neutron-fg-muted, #a1a1aa);
+  color: var(--nd-muted);
   margin: 0 0 0.5rem;
 }
 .docs-index-section-desc {
   font-size: 0.8125rem;
-  color: var(--neutron-fg-muted, #a1a1aa);
+  color: var(--nd-muted);
   margin: 0 0 0.875rem;
   line-height: 1.5;
 }
@@ -492,13 +495,13 @@ a {
 }
 .docs-index-section li { font-size: 0.875rem; line-height: 1.5; }
 .docs-index-section a {
-  color: var(--neutron-fg, #f4f4f5);
+  color: var(--nd-fg);
   text-decoration: none;
   font-weight: 500;
 }
-.docs-index-section a:hover { color: var(--neutron-accent, #818cf8); }
+.docs-index-section a:hover { color: var(--nd-accent); }
 .docs-index-page-desc {
-  color: var(--neutron-fg-muted, #71717a);
+  color: var(--nd-muted);
   font-weight: 400;
 }
 
